@@ -10,14 +10,15 @@
 </head>
 <body>
 	<script type="text/x-handlebars">
-		<div class="navbar">
-			<div class="navbar-inner">
-				<a class="brand" href="#">The Motley Fool</a>
-				<ul class="nav">	
-					<li>{{#link-to 'stocks'}}Stocks{{/link-to}}</li>
-					<li>{{#link-to 'news'}}News{{/link-to}}</li>
-					<li>{{#link-to 'settings'}}Settings{{/link-to}}</li>
-				</ul>
+		<div id="header" class="row-fluid">
+			<div class="span12">
+				<div class="navbar navbar-inverse navbar-fixed-top">
+					<div class="navbar-inner">
+						<div id="navcontainer" class="container">
+							<a id="logo" href="#" class="brand pull-left"></a>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 		{{outlet}}
@@ -25,11 +26,35 @@
 
 	<script type="text/x-handlebars" id="stocks">
 		<h3>My Stocks</h3>
+		<div class="content">
+		</div>
+		<div id="footer" class="row-fluid" data-role="footer">
+			<div class="span12">
+				<div class="navbar navbar-inverse navbar-fixed-bottom">
+					<div class="navbar-inner">
+						<div id="navcontainer" class="container">                           
+						</div>
+					</div> 
+				</div>
+			</div>
+		</div>
 	</script>
 
 	<script type="text/x-handlebars" id="news">
 		<h3>My News</h3>
 		<p>Latest Coverage of My Stocks</p>
+		<div class="content">
+		</div>
+		<div id="footer" class="row-fluid" data-role="footer">
+			<div class="span12">
+				<div class="navbar navbar-inverse navbar-fixed-bottom">
+					<div class="navbar-inner">
+						<div id="navcontainer" class="container">                           
+						</div>
+					</div> 
+				</div>
+			</div>
+		</div>
 		{{#each}}
 			<div>
 				{{title}}<small class='muted'> by {{author.name}}</small>
@@ -46,6 +71,18 @@
 
 	<script type="text/x-handlebars" id="settings">
 		<h3>My Settings</h3>
+		<div class="content">
+		</div>
+		<div id="footer" class="row-fluid" data-role="footer">
+			<div class="span12">
+				<div class="navbar navbar-inverse navbar-fixed-bottom">
+					<div class="navbar-inner">
+						<div id="navcontainer" class="container">                           
+						</div>
+					</div> 
+				</div>
+			</div>
+		</div>
 	</script>
 
 	<script src="js/libs/jquery-1.9.1.js"></script>
