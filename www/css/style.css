@@ -1,13 +1,22 @@
 .content {
 	min-height: 80%;	
 }
+
+.login-nav {
+	height: 60px !important;
+}
+
 .brand {
 	background: transparent url(http://g.foolcdn.com/img/topNav/headerSprite.gif) no-repeat top left !important;
 	height: 37px;
 	width: 273px;
+	position: absolute;
+	left: 50%; 
+	margin-left: -136px !important;
 	webkit-box-shadow: none;
 	-moz-box-shadow: none;
-	box-shadow: none;
+	box-shadow: none;	
 }
+
 [data-role=page]{height: 100% !important; position:relative !important;}
 [data-role=footer]{bottom:0; position:absolute !important; top: auto !important; width:100%;} 

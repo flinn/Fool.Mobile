@@ -1,6 +1,8 @@
 app = Ember.Application.create();
 
 app.Router.map(function() {
+
+	this.resource('login', { path: '/' });
 	this.resource('stocks');
 
 	this.resource('news');

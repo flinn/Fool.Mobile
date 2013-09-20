@@ -13,53 +13,64 @@
 		<div id="header" class="row-fluid">
 			<div class="span12">
 				<div class="navbar navbar-inverse navbar-fixed-top">
-					<div class="navbar-inner">
-						<div id="navcontainer" class="container">
-							<a id="logo" href="#" class="brand pull-left"></a>
+					<div class="navbar-inner login-nav">
+						<div class="container">
+							<a id="logo" href="#" class="brand"></a>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 		{{outlet}}
+		<div id="footer" class="row-fluid" data-role="footer">
+			<div class="span12">
+				<div class="navbar navbar-inverse navbar-fixed-bottom">
+					<div class="navbar-inner">
+						<div id="navcontainer" class="container">
+						</div>
+					</div> 
+				</div>
+			</div>
+		</div>
+	</script>
+
+	<script type="text/x-handlebars" id="login">		
+		<div class="row-fluid text-center">
+			<div class="span12">
+				<h2>Sign In</h2>
+				<div class="validation-errors">            
+			</div>
+			<div class="input-prepend">
+				<span class="add-on pull-left"><i class="fui-user"></i></span>
+				<input class="span2" id="user_last_name" placeholder="Username" type="text">
+			</div>
+			<br/>
+			<div class="input-prepend">
+				<span class="add-on pull-left"><i class="fui-lock"></i></span>
+				<input class="span2" id="user_password" placeholder="Password" type="password">
+			</div>
+			<div>
+				<input class="btn btn-primary btn-wide" name="commit" type="submit" value="Submit">
+			</div>
+		</div>			
 	</script>
 
 	<script type="text/x-handlebars" id="stocks">
 		<h3>My Stocks</h3>
 		<div class="content">
 		</div>
-		<div id="footer" class="row-fluid" data-role="footer">
-			<div class="span12">
-				<div class="navbar navbar-inverse navbar-fixed-bottom">
-					<div class="navbar-inner">
-						<div id="navcontainer" class="container">                           
-						</div>
-					</div> 
-				</div>
-			</div>
-		</div>
 	</script>
 
 	<script type="text/x-handlebars" id="news">
 		<h3>My News</h3>
 		<p>Latest Coverage of My Stocks</p>
-		<div class="content">
-		</div>
-		<div id="footer" class="row-fluid" data-role="footer">
-			<div class="span12">
-				<div class="navbar navbar-inverse navbar-fixed-bottom">
-					<div class="navbar-inner">
-						<div id="navcontainer" class="container">                           
-						</div>
-					</div> 
-				</div>
-			</div>
-		</div>
+		<div class="content">		
 		{{#each}}
 			<div>
 				{{title}}<small class='muted'> by {{author.name}}</small>
 			</div>
 		{{/each}}
+		</div>
 	</script>
 
 	<script type="text/x-handlebars" id="article">
@@ -72,16 +83,6 @@
 	<script type="text/x-handlebars" id="settings">
 		<h3>My Settings</h3>
 		<div class="content">
-		</div>
-		<div id="footer" class="row-fluid" data-role="footer">
-			<div class="span12">
-				<div class="navbar navbar-inverse navbar-fixed-bottom">
-					<div class="navbar-inner">
-						<div id="navcontainer" class="container">                           
-						</div>
-					</div> 
-				</div>
-			</div>
 		</div>
 	</script>
 
