@@ -1,49 +1,145 @@
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
-var app = {
-    // Application Constructor
-    initialize: function() {
-        this.bindEvents();
-    },
-    // Bind Event Listeners
-    //
-    // Bind any events that are required on startup. Common events are:
-    // 'load', 'deviceready', 'offline', and 'online'.
-    bindEvents: function() {
-        document.addEventListener('deviceready', this.onDeviceReady, false);
-    },
-    // deviceready Event Handler
-    //
-    // The scope of 'this' is the event. In order to call the 'receivedEvent'
-    // function, we must explicity call 'app.receivedEvent(...);'
-    onDeviceReady: function() {
-        app.receivedEvent('deviceready');
-    },
-    // Update DOM on a Received Event
-    receivedEvent: function(id) {
-        var parentElement = document.getElementById(id);
-        var listeningElement = parentElement.querySelector('.listening');
-        var receivedElement = parentElement.querySelector('.received');
+var app = (function () {
+    
+    var api_key,
+        authTokenData,
+        authCredentials,
+        client_id,
+        client_secret,
+        subscriptionsData;
+        
+    authTokenData = {};
+    subscriptionsData = [];
+    
+    api_key = "AlY094jtmLj832m0nIKUDxcSsqTa88sl";
+    client_id = "AlY094jtmLj832m0nIKUDxcSsqTa88sl";
+    client_secret = "5Pqx7p70IHlHYMOQ";
 
-        listeningElement.setAttribute('style', 'display:none;');
-        receivedElement.setAttribute('style', 'display:block;');
+    authCredentials = {
+        api_key: api_key,
+        client_id: client_id,
+        client_secret: client_secret        
+    };
 
-        console.log('Received Event: ' + id);
+    return {
+        userIsSignedIn: false,
+        signIn: function (username, password, callback) {
+            var makingAuthRequest;
+            authCredentials = $.extend(authCredentials, {
+                username: username,
+                password: password,
+                grant_type: "password"
+            });
+            makingAuthRequest = makeAuthRequest(authCredentials, callback);
+            makingAuthRequest.fail(function (xhr) {
+                if (isInvalidAuthRequest(xhr)) showSignInErrorMessage();
+            });
+            this.userIsSignedIn = true;
+        },
+        signOut: function () {
+            removeAuthTokenData();
+            this.userIsSignedIn = false;
+        },
+        requestSubscriptionsData: function (accessToken, callback) {
+            var that = this;
+            $.ajax({
+                beforeSend: function () {
+                    // before send
+                },
+                headers: {
+                    Authorization: "Bearer " + accessToken
+                },
+                type: "get",
+                url: "http://motley-fool-test.apigee.net/premium/mysubscriptions?apikey=" + api_key
+            }).done(function (response) {
+                subscriptionsData = response;
+                if (callback) callback();
+            }).fail(function (xhr) {
+                if (accessTokenHasExpired(xhr)) {
+                    var gettingNewAuthTokenData = getNewAuthTokenData();
+                    gettingNewAuthTokenData.done(function () {
+                        var accessToken = that.getAccessToken();
+                        that.requestSubscriptionsData(accessToken, that.listSubscriptions);
+                    });
+                }
+            });
+        },
+        listSubscriptions: function () {
+            var subscriptions,
+                list,
+                items;
+            subscriptions = app.getSubscriptionsData();
+            list = $('<ul></ul>');
+            items = "";
+            $.each(subscriptions, function () {
+                items+= '<li>' + this.ProductName + '</li>';
+            });
+            list.append(items);
+            $("#subscriptions-list").empty().append(list);
+        },
+        getAuthTokenData: function () {
+            return authTokenData;
+        },
+        getSubscriptionsData: function () {
+            return subscriptionsData;
+        },
+        getAccessToken: function () {
+            return window.localStorage.getItem("accessToken");
+        },
+        changePage: function (filename) {
+            $.mobile.changePage(filename);
+        }
+    };
+
+    function makeAuthRequest (credentials, callback) {
+        var that = this;
+        return $.ajax({
+            contentType: "application/x-www-form-urlencoded",
+            data: credentials,
+            type: "post",
+            url: "http://motley-fool-test.apigee.net/v1/weather/access_token"
+        }).done(function (response) {
+            storeAuthTokenData(response);
+            if (callback) callback();
+        });
     }
-};
+    function getNewAuthTokenData () {
+        var refreshToken,
+            credentials;
+        refreshToken = getRefreshToken();
+        authCredentials = $.extend(authCredentials, {
+            grant_type: "refresh_token",
+            refresh_token: refreshToken
+        });
+        return makeAuthRequest(authCredentials);
+    }
+    function isInvalidAuthRequest (xhr) {
+        if (xhr.status === 400) return true;
+    }
+    function accessTokenHasExpired (xhr) {
+        if (xhr.status === 401) return true;
+    }
+    function showSignInErrorMessage () {
+        $("#sign-in-error-message").html("Fool! You typed in your username or password incorrectly. Please try signing in again.");
+    }
+    function storeAuthTokenData(authTokenData) {
+        window.localStorage.setItem("accessToken", authTokenData.access_token);
+        window.localStorage.setItem("refreshToken", authTokenData.refresh_token);
+    }
+    function removeAuthTokenData () {
+        window.localStorage.removeItem("accessToken");
+        window.localStorage.removeItem("refreshToken");
+    }
+    function getRefreshToken () {
+        return window.localStorage.getItem("refreshToken");
+    }
+}());
+
+$(document).bind("mobileinit", function() {
+    $.extend($.mobile, {
+        allowCrossDomainPages: true,
+        //defaultPageTransition: "slide"
+    });
+    $.extend($.support, {
+        cors: true
+    });
+});
