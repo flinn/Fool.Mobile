@@ -135,11 +135,16 @@ var app = (function () {
 }());
 
 $(document).bind("mobileinit", function() {
+    $.mobile.defaultPageTransition = 'none';
+    $.mobile.defaultDialogTransition = 'none';
     $.extend($.mobile, {
         allowCrossDomainPages: true,
         //defaultPageTransition: "slide"
     });
     $.extend($.support, {
         cors: true
+    });
+    $.extend(  $.mobile , {
+        defaultPageTransition: 'none'
     });
 });
