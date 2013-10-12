@@ -1,15 +1,16 @@
 
 .headerArea {
-	min-height: 60px;	
+	min-height: 65px;	
 }
 
 .brand {
 	background: transparent url(../img/headerSprite.gif) no-repeat top left !important;
-	height: 54px;
+	height: 60px;
 	width: 273px;
 	position: absolute;
 	text-shadow: none;
-	left: 50% !important; 
+	left: 50% !important;
+	margin-top: 5px !important;
 	margin-left: -136px !important;
 	webkit-box-shadow: none;
 	-moz-box-shadow: none;
@@ -29,4 +30,25 @@
 	padding-right: 0px !important;
 	padding-left: 0px !important;
 	padding-bottom: 0px !important;
+}
+
+.menuicon {
+	width: 25px;
+	height: 25px;
+}
+
+/*#stockSearchInput div.ui-input-search { 
+	background-color: #fff !important;
+}
+
+#myStocksPage .ui-body-c, .ui-overlay-c {
+	background-color: #f2f2f2 !important;
+}
+
+#myStocksPage .ui-btn-up-c {
+	background-color: #fff !important;
+}*/
+
+#stockSearchArea {
+	margin-top: -10px;	
 }

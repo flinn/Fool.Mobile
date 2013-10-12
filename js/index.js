@@ -135,6 +135,7 @@ var app = (function () {
 }());
 
 $(document).bind("mobileinit", function() {
+    $('#panelMenu').hide();
     $.mobile.defaultPageTransition = 'none';
     $.mobile.defaultDialogTransition = 'none';
     $.extend($.mobile, {

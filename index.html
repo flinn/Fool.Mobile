@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
 
+  <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
   <link href="css/codiqa.ext.css" rel="stylesheet">
   <link href="css/jquery.mobile.theme-1.3.1.css" rel="stylesheet">
   <link href="css/jquery-mobile.css" rel="stylesheet">
@@ -13,8 +14,11 @@
   <link rel="stylesheet" type="text/css" href="css/jquery.mobile.flatui.css" />
   <link rel="stylesheet" type="text/css" href="css/style.css">
 
-  <script src="js/jquery-1.9.1.js"></script>
-  <script src="js/jquery.mobile-1.3.1.js"></script>
+  <script src="js/libs/jquery-1.9.1.js"></script>
+  <script src="js/libs/jquery.mobile-1.3.1.min.js"></script>
+  <script src="js/libs/underscore.js"></script>
+  <script src="js/libs/backbone-min.js"></script>
+  <script src="js/libs/backbone.localStorage.js"></script>
   <script src="js/codiqa.ext.js"></script>
   <script src="js/fool-mobile.js"></script>
   <script src="phonegap.js"></script>
@@ -27,44 +31,25 @@
       </div>
       <div data-role="content">
           <div data-controltype="textblock">
-              <h1 style="text-align: center;" data-mce-style="text-align: center;">
-                  <span style="font-family: tahoma, arial, helvetica, sans-serif;" data-mce-style="font-family: tahoma, arial, helvetica, sans-serif;">
-                      <b>
-                          Welcome, Fool!
-                      </b>
-                  </span>
+              <h1 style="text-align: center; margin-top: -5px; margin-bottom: -5px;" data-mce-style="text-align: center;">
+                  <span><b>Welcome!</b></span>
               </h1>
+          </div>         
+          <div data-role="fieldcontain" data-controltype="textinput" style="border: none !important">
+              <input name="" id="textinput1" placeholder="Username or Email" value="" type="text">
           </div>
-          <div data-controltype="textblock">
-              <p style="text-align: center;" data-mce-style="text-align: center;">
-                  <b style="font-size: small;" data-mce-style="font-size: small;">
-                      Please login using your Username/Email and password.
-                  </b>
-              </p>
-          </div>
-          <div data-role="fieldcontain" data-controltype="textinput">
-              <input name="" id="textinput1" placeholder="Username" value="" type="text">
-          </div>
-          <div data-role="fieldcontain" data-controltype="textinput">
+          <div data-role="fieldcontain" data-controltype="textinput" style="border: none !important">
               <input name="" id="textinput2" placeholder="Password" value="" type="password">
           </div>
-          <a data-theme="a" data-role="button" href="#page6">
-              Continue
-          </a>
+          <a data-theme="a" data-role="button" href="#myStocksPage">Login</a>
       </div>
   </div>
   <div data-role="page" data-control-title="My Fool" id="page6">
-      <div data-role="panel" id="panel1" data-position="left" data-display="reveal"
-      data-theme="a">
+        <div data-role="panel" id="panel1" data-position="left" data-display="reveal" data-theme="a">
           <ul data-role="listview" data-divider-theme="h" data-inset="false">
               <li data-role="list-divider" role="heading" style="text-align: center">
                   <h4>Menu</h4>
-              </li>
-              <li data-theme="a">
-                  <a href="#page6" data-transition="slide">
-                      My Fool
-                  </a>
-              </li>
+              </li>              
               <li data-theme="a">
                   <a href="#page5" data-transition="slide">
                       Trade Alerts
@@ -77,14 +62,9 @@
               </li>
               <li data-theme="a">
                   <a href="#page3" data-transition="slide">
-                      My Scorecard
+                      My Stocks
                   </a>
-              </li>
-              <li data-theme="a">
-                  <a href="#page6" data-transition="slide">
-                      Mailbox
-                  </a>
-              </li>
+              </li>             
               <li data-role="list-divider" role="heading">
               </li>
               <li data-theme="a">
@@ -98,7 +78,7 @@
                   </a>
               </li>
           </ul>
-      </div>
+      </div>      
       <div data-theme="a" data-role="header" data-position="fixed">
           <a data-role="button" href="#panel1" class="elvispanel ui-btn-left">
             <img src="icon.png" class="elvis" />
@@ -337,177 +317,13 @@
           </div>
       </div>
   </div>
-  <div data-role="page" data-control-title="Mailbox" id="page10">
-      <div data-role="panel" id="panel7" data-position="left" data-display="reveal"
-      data-theme="a">
-          <ul data-role="listview" data-divider-theme="h" data-inset="false">
-              <li data-role="list-divider" role="heading">
-                  The Motley Fool
-              </li>
-              <li data-theme="a">
-                  <a href="#page6" data-transition="slide">
-                      My Fool
-                  </a>
-              </li>
-              <li data-theme="a">
-                  <a href="#page5" data-transition="slide">
-                      Trade Alerts
-                  </a>
-              </li>
-              <li data-theme="a">
-                  <a href="#page1" data-transition="slide">
-                      Latest News
-                  </a>
-              </li>
-              <li data-theme="a">
-                  <a href="#page3" data-transition="slide">
-                      My Scorecard
-                  </a>
-              </li>
-              <li data-theme="a">
-                  <a href="#page6" data-transition="slide">
-                      Mailbox
-                  </a>
-              </li>
-              <li data-role="list-divider" role="heading">
-              </li>
-              <li data-theme="a">
-                  <a href="#page4" data-transition="slide">
-                      Settings
-                  </a>
-              </li>
-              <li data-theme="a">
-                  <a href="#page8" data-transition="slide">
-                      Help
-                  </a>
-              </li>
-          </ul>
-      </div>
-      <div data-theme="a" data-role="header">
-          <a data-role="button" href="#panel7" data-icon="bars" data-iconpos="notext"
-          class="ui-btn-right">
-          </a>
-          <h3>
-              Mailbox
-          </h3>
-      </div>
-      <div data-role="content">
-          <div data-controltype="textblock">
-              <p>
-                  <span>
-                      <b>
-                          Mailbox Message&nbsp;
-                      </b>
-                  </span>
-                  <em>
-                      <b>
-                          from Author Name
-                          <br>
-                      </b>
-                  </em>
-                  Photo booth flexitarian hashtag chillwave, ethical gluten-free vinyl scenester
-                  stumptown Vice Tumblr...
-              </p>
-          </div>
-          <div data-controltype="textblock">
-              <p>
-                  <span>
-                      <b>
-                          Mailbox Message&nbsp;
-                      </b>
-                  </span>
-                  <em>
-                      <b>
-                          from Author Name
-                          <br>
-                      </b>
-                  </em>
-                  Photo booth flexitarian hashtag chillwave, ethical gluten-free vinyl scenester
-                  stumptown Vice Tumblr...
-              </p>
-          </div>
-          <div data-controltype="textblock">
-              <p>
-                  <span>
-                      <b>
-                          Mailbox Message&nbsp;
-                      </b>
-                  </span>
-                  <em>
-                      <b>
-                          from Author Name
-                          <br>
-                      </b>
-                  </em>
-                  Photo booth flexitarian hashtag chillwave, ethical gluten-free vinyl scenester
-                  stumptown Vice Tumblr...
-              </p>
-          </div>
-          <div data-controltype="textblock">
-              <p>
-                  <span>
-                      <b>
-                          Mailbox Message&nbsp;
-                      </b>
-                  </span>
-                  <em>
-                      <b>
-                          from Author Name
-                          <br>
-                      </b>
-                  </em>
-                  Photo booth flexitarian hashtag chillwave, ethical gluten-free vinyl scenester
-                  stumptown Vice Tumblr...
-              </p>
-          </div>
-          <div data-controltype="textblock">
-              <p>
-                  <span>
-                      <b>
-                          Mailbox Message&nbsp;
-                      </b>
-                  </span>
-                  <em>
-                      <b>
-                          from Author Name
-                          <br>
-                      </b>
-                  </em>
-                  Photo booth flexitarian hashtag chillwave, ethical gluten-free vinyl scenester
-                  stumptown Vice Tumblr...
-              </p>
-          </div>
-          <div data-controltype="textblock">
-              <p>
-                  <span>
-                      <b>
-                          Mailbox Message&nbsp;
-                      </b>
-                  </span>
-                  <em>
-                      <b>
-                          from Author Name
-                          <br>
-                      </b>
-                  </em>
-                  Photo booth flexitarian hashtag chillwave, ethical gluten-free vinyl scenester
-                  stumptown Vice Tumblr...
-              </p>
-          </div>
-      </div>
-  </div>
-  <div data-role="page" data-control-title="Stocks" id="page3">
+  <div data-role="page" data-control-title="Stocks" id="myStocksPage">
       <div data-role="panel" id="panel2" data-position="left" data-display="reveal"
       data-theme="a">
           <ul data-role="listview" data-divider-theme="h" data-inset="false">
               <li data-role="list-divider" role="heading">
                   The Motley Fool
-              </li>
-              <li data-theme="a">
-                  <a href="#page6" data-transition="slide">
-                      My Fool
-                  </a>
-              </li>
+              </li>             
               <li data-theme="a">
                   <a href="#page5" data-transition="slide">
                       Trade Alerts
@@ -520,14 +336,9 @@
               </li>
               <li data-theme="a">
                   <a href="#page3" data-transition="slide">
-                      My Scorecard
+                      <span class="ui-icon-flat-menu">&nbsp;</span>My Stocks
                   </a>
-              </li>
-              <li data-theme="a">
-                  <a href="#page10" data-transition="slide">
-                      Mailbox
-                  </a>
-              </li>
+              </li>            
               <li data-role="list-divider" role="heading">
               </li>
               <li data-theme="a">
@@ -542,18 +353,29 @@
               </li>
           </ul>
       </div>
-      <div data-theme="a" data-role="header" data-position="fixed">
-          <a data-role="button" href="#panel2" data-icon="bars" data-iconpos="notext"
-          class="ui-btn-right">
+     <div data-theme="a" data-role="header" data-position="fixed">
+           <a data-role="button" href="#panel2" class="elvispanel ui-btn-left">
+            <img src="icon.png" class="elvis" />
           </a>
           <h3>
-              My Scorecard
+              My Stocks
           </h3>
       </div>
       <div data-role="content">
+          <div class="ui-grid-a">
+            <div class="ui-block-a">
+                <div data-role="fieldcontain">
+                    <input name="" id="searchinput2" placeholder="" value="" type="search"
+                    data-mini="true">
+                </div>
+            </div>
+            <div class="ui-block-b">
+                <input type="submit" value="Submit">
+            </div>
+        </div>
           <ul data-role="listview" data-divider-theme="b" data-inset="true">
               <li data-role="list-divider" role="heading">
-                  My Scorecard
+                  My Stocks
               </li>
               <li data-theme="c">
                   <a href="#page9" data-transition="slide">
@@ -580,14 +402,7 @@
                       GOOG
                   </a>
               </li>
-          </ul>
-          <div data-role="fieldcontain" data-controltype="searchinput">
-              <input name="" id="searchinput4" placeholder="Ticker or Company Name"
-              value="" type="search" data-mini="true">
-          </div>
-          <a data-role="button" href="#page9">
-              Search
-          </a>
+          </ul>  
       </div>
   </div>
   <div data-role="page" data-control-title="Snapshot" id="page9">
