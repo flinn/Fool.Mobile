@@ -1,6 +1,7 @@
 
 .headerArea {
-	min-height: 65px;	
+	min-height: 65px;
+	background-color: #404040;	
 }
 
 .brand {
@@ -37,18 +38,108 @@
 	height: 25px;
 }
 
-/*#stockSearchInput div.ui-input-search { 
-	background-color: #fff !important;
-}
-
-#myStocksPage .ui-body-c, .ui-overlay-c {
-	background-color: #f2f2f2 !important;
-}
-
-#myStocksPage .ui-btn-up-c {
-	background-color: #fff !important;
-}*/
-
 #stockSearchArea {
 	margin-top: -10px;	
 }
+
+.stockUp {
+	display: inline-block;
+	margin-top: 3px;
+}
+
+.stockDown {
+	display: inline-block;
+	margin-top: 3px;
+}
+
+.stockRowPrice {
+	float: right;
+	padding-right: 20px;
+}
+
+.stockRowChangeUp {
+	font-weight: lighter;
+	float: right;
+	color: #55AA22;
+	padding-right: 5px;
+}
+
+.stockRowChangeDown {
+	font-weight: lighter;
+	float: right;
+	color: #BB0000;
+	padding-right: 5px;	
+}
+
+.panelMenu { 
+	background-color: #222222;
+}
+
+.panelMenu .ui-btn-up-a {
+	background-color: #404040;
+}
+
+.panelMenu .ui-li-divider {
+	background-color: #222222;
+	color: #fff;
+}
+
+.panelMenu .ui-btn-up-a:visited, .ui-btn-up-a a.ui-link-inherit {
+	color: #fff !important;
+	font-weight: lighter !important;
+}
+
+.panelMenu li.alerts .ui-icon-shadow {
+	background-color: #882288;
+}
+.panelMenu li.alerts .ui-btn-inner .ui-li {
+	background-color: #882288 !important;
+}
+
+.panelMenu li.news .ui-icon-shadow {
+	background-color: #FF9900;
+}
+
+.panelMenu li.stocks .ui-icon-shadow {
+	background-color: #0077AA;
+}
+
+.panelMenu img.navicon { 
+	display: inline-block;  
+    position: absolute;
+    margin-top: 10px;
+    margin-bottom: -20px;
+    height: 30px;
+    width: 30px;
+    margin-left: 15px;
+}
+
+.panelMenu .ui-listview .ui-li > .ui-btn-text {
+	max-height: 50px;
+}
+
+.panelMenu span.navtext {
+	padding-top: 2px;
+	margin-left: -40px;
+	font-size: 18px;
+}
+
+.panelMenu span.navheader {
+	font-size: 24px;
+	font-family: 'Roboto', 
+	sans-serif; 
+	font-weight: lighter;
+	margin-left: 50px;
+}
+
+.losers {
+	background-color: #BB0000;
+}
+
+/*.header-alerts {
+	background-color: #882288;
+}
+
+.header-news { 
+	background-color: #FF9900;
+}*/
