@@ -21,193 +21,63 @@
   <script src="js/libs/underscore.js"></script>
   <script src="js/libs/backbone-min.js"></script>
   <script src="js/libs/backbone.localStorage.js"></script>
-  <script src="js/codiqa.ext.js"></script>
+  <script src="js/codiqa.ext.js"></script>  
   <script src="js/fool-mobile.js"></script>
   <script src="js/index.js"></script>
 </head>
 <body>
-  <div data-role="page" data-control-title="Login" id="page2">
-      <div data-theme="a" data-role="header" data-position="fixed" class="headerArea" style="border: none !important">
-          <span id="logo" href="#" class="brand pull-left"></span>
-      </div>
-      <div data-role="content">
-          <div data-controltype="textblock">
-              <h1 style="text-align: center; margin-top: -5px; margin-bottom: -5px;" data-mce-style="text-align: center;">
-                  <span style="color: #404040" class="navheader">Welcome, Fool!</span>
-              </h1>
-          </div>         
-          <div data-role="fieldcontain" data-controltype="textinput" style="border: none !important">
-              <input name="" id="textinput1" placeholder="Username or Email" value="" type="text">
-          </div>
-          <div data-role="fieldcontain" data-controltype="textinput" style="border: none !important">
-              <input name="" id="textinput2" placeholder="Password" value="" type="password">
-          </div>
-          <a data-theme="a" data-role="button" href="#myStocksPage">Login</a>
-      </div>
+  <div data-role="page" data-control-title="Login" id="loginPage">
+    <div data-theme="a" data-role="header" data-position="fixed" class="headerArea" style="border: none !important">
+        <span id="logo" href="#" class="brand pull-left"></span>
+    </div>
+    <div data-role="content">
+        <div data-controltype="textblock">
+            <h1 style="text-align: center; margin-top: -5px; margin-bottom: -5px;" data-mce-style="text-align: center;">
+                <span style="color: #404040" class="navheader">Welcome, Fool!</span>
+            </h1>
+        </div>         
+        <div data-role="fieldcontain" data-controltype="textinput" style="border: none !important">
+            <input name="" id="textinput1" placeholder="Username or Email" value="" type="text">
+        </div>
+        <div data-role="fieldcontain" data-controltype="textinput" style="border: none !important">
+            <input name="" id="textinput2" placeholder="Password" value="" type="password">
+        </div>
+        <a data-theme="a" data-role="button" href="#stocksPage">Login</a>
+    </div>
   </div>
-  <div data-role="page" data-control-title="My Fool" id="page6">
-    <div data-role="panel" id="panel1" data-position="left" data-display="reveal" data-theme="a">
+  <div data-role="page" data-control-title="News" id="newsPage">
+    <div class="panelMenu" data-role="panel" id="panel5" data-position="left" data-display="reveal" data-theme="a">
       <ul data-role="listview" data-divider-theme="h" data-inset="false">
-        <li data-role="list-divider" role="heading" style="text-align: center">
-            <h4>Menu</h4>
-        </li>              
-        <li data-theme="a">
-            <a href="#page5" data-transition="slide">
-                Trade Alerts
-            </a>
-        </li>
-        <li data-theme="a">
-            <a href="#page1" data-transition="slide">
-                Latest News
-            </a>
-        </li>
-        <li data-theme="a">
-            <a href="#page3" data-transition="slide">
-                My Stocks
-            </a>
+        <li data-role="list-divider" role="heading">
+            <img src="img/FoolOneIcon.png" class="navicon" /><span class="navheader">Motley Fool One</span>
         </li>             
+        <li data-theme="a" class="alerts">
+            <a href="#alertsPage">
+                 <img src="img/appbar.speakerphone.png" class="navicon" /><span class="navtext">Trade Alerts</span>
+            </a>
+        </li>
+        <li data-theme="a" class="news">
+            <a href="#newsPage">
+                <img src="img/appbar.newspaper.png" class="navicon" /><span class="navtext">Latest News</span>
+            </a>
+        </li>
+        <li data-theme="a" class="stocks">
+            <a href="#stocksPage" data-transition="slide">
+                <img src="img/appbar.stock.up.png" class="navicon" /><span class="navtext">My Stocks</span>
+            </a>
+        </li>            
         <li data-role="list-divider" role="heading">
         </li>
         <li data-theme="a">
-            <a href="#page4" data-transition="slide">
-                Settings
+            <a href="#settingsPage">
+                <img src="img/appbar.settings.png" class="navicon" /><span class="navtext">Settings</span>
             </a>
         </li>
         <li data-theme="a">
-            <a href="#page8" data-transition="slide">
-                Help
+            <a href="#helpPage">
+                <img src="img/appbar.question.png" class="navicon" /><span class="navtext">Help</span>
             </a>
         </li>
-      </ul>
-    </div>
-    <div data-theme="a" data-role="header" data-position="fixed">
-        <a data-role="button" href="#panel1" class="elvispanel ui-btn-left">
-          <img src="icon.png" class="elvis" />
-        </a>
-        <h3>
-            My Fool
-        </h3>
-    </div>
-    <div data-role="content">
-        <ul data-role="listview" data-divider-theme="b" data-inset="true">
-            <li data-theme="c">
-                <a href="#page3" data-transition="slide">
-                    MSFT (+11%)
-                </a>
-            </li>
-            <li data-theme="c">
-                <a href="#page2" data-transition="slide">
-                    TSLA (+8%)
-                </a>
-            </li>
-            <li data-theme="c">
-                <a href="#page2" data-transition="slide">
-                    AAPL (+5%)
-                </a>
-            </li>
-        </ul>
-        <div data-role="collapsible-set">
-            <div data-role="collapsible" data-collapsed="false">
-                <h3>
-                    Trade Alerts
-                </h3>
-                <div data-controltype="textblock">
-                    <p>
-                        <b>
-                            <span>
-                                Sell AAPL!
-                            </span>
-                        </b>
-                        <em>
-                            <b>
-                                <br>
-                            </b>
-                        </em>
-                        Photo booth flexitarian hashtag chillwave, ethical gluten-free vinyl scenester
-                        stumptown Vice Tumblr...
-                    </p>
-                </div>
-            </div>
-            <div data-role="collapsible">
-                <h3>
-                    Trending News
-                </h3>
-                <div data-controltype="textblock">
-                    <b>
-                        Enter content here...
-                    </b>
-                </div>
-            </div>
-            <div data-role="collapsible">
-                <h3>
-                    Mailbox
-                </h3>
-                <div data-controltype="textblock">
-                    <h4>
-                        <b>
-                            Are YOU ready for huge returns?
-                            <br>
-                        </b>
-                        <em>
-                            <b>
-                                from Tom Garner
-                            </b>
-                        </em>
-                    </h4>
-                    <p>
-                        <b>
-                            <br>
-                        </b>
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div data-controltype="textblock">
-            <h1 data-mce-style="text-align: center;" style="text-align: center;">
-                <b>
-                    Search
-                </b>
-            </h1>
-        </div>
-        <div data-role="fieldcontain" data-controltype="searchinput">
-            <input name="" id="searchinput5" placeholder="Ticker or Keyword" value=""
-            type="search">
-        </div>
-    </div>
-  </div>
-  <div data-role="page" data-control-title="News" id="page1">
-    <div class="panelMenu" data-role="panel" id="panel5" data-position="left" data-display="reveal" data-theme="a">
-      <ul data-role="listview" data-divider-theme="h" data-inset="false">
-              <li data-role="list-divider" role="heading">
-                  <img src="img/FoolOneIcon.png" class="navicon" /><span class="navheader">Motley Fool One</span>
-              </li>             
-              <li data-theme="a" class="alerts">
-                  <a href="#page5" data-transition="slide">
-                       <img src="img/appbar.speakerphone.png" class="navicon" /><span class="navtext">Trade Alerts</span>
-                  </a>
-              </li>
-              <li data-theme="a" class="news">
-                  <a href="#page1" data-transition="slide">
-                      <img src="img/appbar.newspaper.png" class="navicon" /><span class="navtext">Latest News</span>
-                  </a>
-              </li>
-              <li data-theme="a" class="stocks">
-                  <a href="#myStocksPage" data-transition="slide">
-                      <img src="img/appbar.stock.up.png" class="navicon" /><span class="navtext">My Stocks</span>
-                  </a>
-              </li>            
-              <li data-role="list-divider" role="heading">
-              </li>
-              <li data-theme="a">
-                  <a href="#page4" data-transition="slide">
-                      <img src="img/appbar.settings.png" class="navicon" /><span class="navtext">Settings</span>
-                  </a>
-              </li>
-              <li data-theme="a">
-                  <a href="#page8" data-transition="slide">
-                      <img src="img/appbar.question.png" class="navicon" /><span class="navtext">Help</span>
-                  </a>
-              </li>
       </ul>
     </div>
     <div class="header-news" data-theme="a" data-role="header" data-position="fixed">
@@ -216,125 +86,42 @@
       </a>
       <h3 style="font-family: 'Roboto', sans-serif; font-weight: lighter">Latest News</h3>
     </div>
-      <div data-role="content">
-          <div data-controltype="textblock">
-              <p>
-                  <span style="font-family: 'arial black', 'avant garde';" data-mce-style="font-family: 'arial black', 'avant garde';">
-                      <b>
-                          Sample Article Title&nbsp;
-                      </b>
-                  </span>
-                  <em style="font-size: x-small;" data-mce-style="font-size: x-small;">
-                      <b>
-                          by Author Name
-                          <br>
-                      </b>
-                  </em>
-                  Photo booth flexitarian hashtag chillwave, ethical gluten-free vinyl scenester
-                  stumptown Vice Tumblr...
-              </p>
-          </div>
-          <div data-controltype="textblock">
-              <p>
-                  <span style="font-family: 'arial black', 'avant garde';" data-mce-style="font-family: 'arial black', 'avant garde';">
-                      <b>
-                          Sample Article Title&nbsp;
-                      </b>
-                  </span>
-                  <em style="font-size: x-small;" data-mce-style="font-size: x-small;">
-                      <b>
-                          by Author Name
-                          <br>
-                      </b>
-                  </em>
-                  Photo booth flexitarian hashtag chillwave, ethical gluten-free vinyl scenester
-                  stumptown Vice Tumblr...
-                  <br>
-              </p>
-          </div>
-          <div data-controltype="textblock">
-              <p>
-                  <span style="font-family: 'arial black', 'avant garde';" data-mce-style="font-family: 'arial black', 'avant garde';">
-                      <b>
-                          Sample Article Title&nbsp;
-                      </b>
-                  </span>
-                  <em style="font-size: x-small;">
-                      <b>
-                          by Author Name
-                          <br>
-                      </b>
-                  </em>
-                  Photo booth flexitarian hashtag chillwave, ethical gluten-free vinyl scenester
-                  stumptown Vice Tumblr...
-              </p>
-          </div>
-          <div data-controltype="textblock">
-              <p>
-                  <span style="font-family: 'arial black', 'avant garde';" data-mce-style="font-family: 'arial black', 'avant garde';">
-                      <b>
-                          Sample Article Title&nbsp;
-                      </b>
-                  </span>
-                  <em style="font-size: x-small;">
-                      <b>
-                          by Author Name
-                          <br>
-                      </b>
-                  </em>
-                  Photo booth flexitarian hashtag chillwave, ethical gluten-free vinyl scenester
-                  stumptown Vice Tumblr...
-              </p>
-          </div>
-          <div data-controltype="textblock">
-              <p>
-                  <span style="font-family: 'arial black', 'avant garde';" data-mce-style="font-family: 'arial black', 'avant garde';">
-                      <b>
-                          Sample Article Title&nbsp;
-                      </b>
-                  </span>
-                  <em style="font-size: x-small;">
-                      <b>
-                          by Author Name
-                          <br>
-                      </b>
-                  </em>
-                  Photo booth flexitarian hashtag chillwave, ethical gluten-free vinyl scenester
-                  stumptown Vice Tumblr...
-              </p>
-          </div>
+    <div data-role="content">      
+      <div style=" text-align:center" data-controltype="image">
+        <img style="width:100%;min-width: 290px;margin-top:-5px;" src="img/newsFeed.png">
       </div>
+    </div>
   </div>
-  <div data-role="page" data-control-title="Stocks" id="myStocksPage">
+  <div data-role="page" data-control-title="Stocks" id="stocksPage">
     <div class="panelMenu" data-role="panel" id="panel2" data-position="left" data-display="reveal" data-theme="a">
       <ul data-role="listview" data-divider-theme="h" data-inset="false">
               <li data-role="list-divider" role="heading">
                   <img src="img/FoolOneIcon.png" class="navicon" /><span class="navheader">Motley Fool One</span>
               </li>             
               <li data-theme="a" class="alerts">
-                  <a href="#page5" data-transition="slide">
+                  <a href="#alertsPage" data-transition="slide">
                        <img src="img/appbar.speakerphone.png" class="navicon" /><span class="navtext">Trade Alerts</span>
                   </a>
               </li>
               <li data-theme="a" class="news">
-                  <a href="#page1" data-transition="slide">
+                  <a href="#newsPage" data-transition="slide">
                       <img src="img/appbar.newspaper.png" class="navicon" /><span class="navtext">Latest News</span>
                   </a>
               </li>
               <li data-theme="a" class="stocks">
-                  <a href="#myStocksPage" data-transition="slide">
+                  <a href="#stocksPage" data-transition="slide">
                       <img src="img/appbar.stock.up.png" class="navicon" /><span class="navtext">My Stocks</span>
                   </a>
               </li>            
               <li data-role="list-divider" role="heading">
               </li>
               <li data-theme="a">
-                  <a href="#page4" data-transition="slide">
+                  <a href="#settingsPage" data-transition="slide">
                       <img src="img/appbar.settings.png" class="navicon" /><span class="navtext">Settings</span>
                   </a>
               </li>
               <li data-theme="a">
-                  <a href="#page8" data-transition="slide">
+                  <a href="#helpPage" data-transition="slide">
                       <img src="img/appbar.question.png" class="navicon" /><span class="navtext">Help</span>
                   </a>
               </li>
@@ -383,283 +170,345 @@
               </li>
               <li data-theme="c">
                   <a href="#snapshotPage" data-transition="slide">
-                      BAC<span class="stockRowChangeDown"><img src="img/DownArrow.PNG" class="stockDown" />&nbsp;$0.04 (-0.28%)</span><span class="stockRowPrice">$14.19</span>
+                      BAC<span class="stockRowChangeDown"><img src="img/DownArrow.png" class="stockDown" />&nbsp;$0.04 (-0.28%)</span><span class="stockRowPrice">$14.19</span>
                   </a>
               </li>              
               <li data-theme="c">
                   <a href="#snapshotPage" data-transition="slide">
-                      SHOS<span class="stockRowChangeDown"><img src="img/DownArrow.PNG" class="stockDown" />&nbsp;$0.09 (-0.30%)</span><span class="stockRowPrice">$29.61</span>
+                      SHOS<span class="stockRowChangeDown"><img src="img/DownArrow.png" class="stockDown" />&nbsp;$0.09 (-0.30%)</span><span class="stockRowPrice">$29.61</span>
                   </a>
               </li>
               <li data-theme="c">
                   <a href="#snapshotPage" data-transition="slide">
-                      MU<span class="stockRowChangeDown"><img src="img/DownArrow.PNG" class="stockDown" />&nbsp;$1.59 (-8.63%)</span><span class="stockRowPrice">$16.84</span>
+                      MU<span class="stockRowChangeDown"><img src="img/DownArrow.png" class="stockDown" />&nbsp;$1.59 (-8.63%)</span><span class="stockRowPrice">$16.84</span>
                   </a>
               </li>                           
           </ul>  
       </div>
   </div>
   <div data-role="page" data-control-title="Snapshot" id="snapshotPage">
-      <div class="panelMenu" data-role="panel" id="panel6" data-position="left" data-display="reveal" data-theme="a">
-        <ul data-role="listview" data-divider-theme="h" data-inset="false">
-          <li data-role="list-divider" role="heading">
-              <img src="img/FoolOneIcon.png" class="navicon" /><span class="navheader">Motley Fool One</span>
-          </li>             
-          <li data-theme="a" class="alerts">
-              <a href="#page5" data-transition="slide">
-                   <img src="img/appbar.speakerphone.png" class="navicon" /><span class="navtext">Trade Alerts</span>
-              </a>
-          </li>
-          <li data-theme="a" class="news">
-              <a href="#page1" data-transition="slide">
-                  <img src="img/appbar.newspaper.png" class="navicon" /><span class="navtext">Latest News</span>
-              </a>
-          </li>
-          <li data-theme="a" class="stocks">
-              <a href="#myStocksPage" data-transition="slide">
-                  <img src="img/appbar.stock.up.png" class="navicon" /><span class="navtext">My Stocks</span>
-              </a>
-          </li>            
-          <li data-role="list-divider" role="heading">
-          </li>
-          <li data-theme="a">
-              <a href="#page4" data-transition="slide">
-                  <img src="img/appbar.settings.png" class="navicon" /><span class="navtext">Settings</span>
-              </a>
-          </li>
-          <li data-theme="a">
-              <a href="#page8" data-transition="slide">
-                  <img src="img/appbar.question.png" class="navicon" /><span class="navtext">Help</span>
-              </a>
-          </li>
-        </ul>
-      </div>
-     <div data-theme="a" data-role="header" data-position="fixed">
+    <div class="panelMenu" data-role="panel" id="panel6" data-position="left" data-display="reveal" data-theme="a">
+      <ul data-role="listview" data-divider-theme="h" data-inset="false">
+        <li data-role="list-divider" role="heading">
+            <img src="img/FoolOneIcon.png" class="navicon" /><span class="navheader">Motley Fool One</span>
+        </li>             
+        <li data-theme="a" class="alerts">
+            <a href="#alertsPage" data-transition="slide">
+                 <img src="img/appbar.speakerphone.png" class="navicon" /><span class="navtext">Trade Alerts</span>
+            </a>
+        </li>
+        <li data-theme="a" class="news">
+            <a href="#newsPage" data-transition="slide">
+                <img src="img/appbar.newspaper.png" class="navicon" /><span class="navtext">Latest News</span>
+            </a>
+        </li>
+        <li data-theme="a" class="stocks">
+            <a href="#stocksPage" data-transition="slide">
+                <img src="img/appbar.stock.up.png" class="navicon" /><span class="navtext">My Stocks</span>
+            </a>
+        </li>            
+        <li data-role="list-divider" role="heading">
+        </li>
+        <li data-theme="a">
+            <a href="#settingsPage" data-transition="slide">
+                <img src="img/appbar.settings.png" class="navicon" /><span class="navtext">Settings</span>
+            </a>
+        </li>
+        <li data-theme="a">
+            <a href="#helpPage" data-transition="slide">
+                <img src="img/appbar.question.png" class="navicon" /><span class="navtext">Help</span>
+            </a>
+        </li>
+      </ul>
+    </div>
+    <div data-theme="a" data-role="header" data-position="fixed">
       <a data-role="button" href="#panel6" class="elvispanel ui-btn-left">
         <img src="icon.png" class="elvis" />
       </a>
-      <h3 style="font-family: 'Roboto', sans-serif; font-weight: lighter">Tesla Motors Inc</h3>
+      <h3 style="font-family: 'Roboto', sans-serif; font-weight: lighter">NASDAQ: SHOS</h3>
     </div>
-      <div data-role="content">
-          <div style=" text-align:center" data-controltype="image">
-              <img style="width: 330px; height: 224px" src="img/msft.png.PNG">
+    <div data-role="content">      
+      <div class="snapShotTitle">Sears Hometown & Outlet Stores<br/><br/>
+        <span class="snapShotCurrentData">$29.61<span style="color: #55AA22;">&nbsp;+$0.09&nbsp;(+3.3%)&nbsp;</span></span>
+      </div>
+      <div style="text-align:center; margin-top: -140px;" data-controltype="image">
+          <img class="faded" style="width: 100%; min-width: 290px;" src="img/sears.png">
+      </div>
+      <div class="ui-grid-a">
+          <div class="ui-block-a">
+            <span class="includeInMyStocksText">Include in <strong>My Stocks</strong>?</span>
           </div>
-          <div data-controltype="textblock">
-              <h3>
-                  <span>
-                      Tesla Motors Inc &nbsp;(NASDAQ: TSLA)
-                  </span>
-              </h3>
-              <h3>
-                  <span>
-                      Price: &nbsp;
-                      <span>
-                          $32.46
-                          <span style="color: rgb(255, 0, 0);">
-                              (-0.9%)&nbsp;
-                          </span>
-                      </span>
-                  </span>
-              </h3>
-              <p>
-                  <span>
-                      The world’s leading software company, Microsoft is the force behind the
-                      Windows operating systems and the Office suite of software.
-                  </span>
-              </p>
+          <div class="ui-block-b">
+            <div style="margin-left: 20px;" data-role="fieldcontain">        
+              <fieldset class="includeInMyStocks" data-role="controlgroup" data-type="horizontal">
+                  <input id="radio1" name="" value="radio1" type="radio">
+                  <label for="radio1">
+                      Yes
+                  </label>
+                  <input id="radio2" name="" value="radio2" type="radio" checked="checked">
+                  <label for="radio2">
+                      No
+                  </label>
+              </fieldset>
+            </div>
           </div>
-          <div class="ui-grid-a">
-              <div class="ui-block-a">
-                  <div data-role="fieldcontain" data-controltype="toggleswitch">
-                      <label for="toggleswitch4">
-                          My Watchlist
-                      </label>
-                      <select name="toggleswitch4" id="toggleswitch4" data-theme="" data-role="slider">
-                          <option value="off">
-                              Off
-                          </option>
-                          <option value="on">
-                              On
-                          </option>
-                      </select>
-                  </div>
-              </div>
-              <div class="ui-block-b">
-                  <div data-role="fieldcontain" data-controltype="toggleswitch">
-                      <label for="toggleswitch5">
-                          My Scorecard
-                      </label>
-                      <select name="toggleswitch5" id="toggleswitch5" data-theme="" data-role="slider">
-                          <option value="off">
-                              Off
-                          </option>
-                          <option value="on">
-                              On
-                          </option>
-                      </select>
-                  </div>
-              </div>
+      </div>     
+      <div style=" text-align:center" data-controltype="image">
+          <img style="width:100%;min-width: 290px;margin-top:-5px;" src="img/companyInfo.png">
+      </div>
+      <div style="" data-controltype="textblock">            
+          <p>Sears Hometown and Outlet Stores, Inc. (SHO) is a retailer primarily focused on selling home appliances, hardware, tools and lawn and garden equipment</p>
+      </div>
+      <div style=" text-align:center" data-controltype="image">
+          <img style="width: 100%; min-width: 290px;" src="img/capsRating.png">
+      </div>  
+      <div class="ui-grid-a">
+          <div class="ui-block-a">
+              <a class="performance-out" data-role="button" href="#">OUTPERFORM</a>
+          </div>
+          <div class="ui-block-b">
+              <a class="performance-under" data-role="button" href="#">UNDERPERFORM</a>
           </div>
       </div>
-      <div data-role="tabbar" data-iconpos="left" data-theme="a">
-          <ul>
-              <li>
-                  <a href="#page9" data-transition="fade" data-theme="" data-icon="info">
-                      Info
-                  </a>
-              </li>
-              <li>
-                  <a href="#" data-transition="fade" data-theme="" data-icon="grid">
-                      News
-                  </a>
-              </li>
-              <li>
-                  <a href="#" data-transition="fade" data-theme="" data-icon="check">
-                      Chat
-                  </a>
-              </li>
-          </ul>
-      </div>
-  </div>
-  <div data-role="page" data-control-title="Alerts" id="page5">
-      <div class="panelMenu" data-role="panel" id="panel3" data-position="left" data-display="reveal" data-theme="a">
-        <ul data-role="listview" data-divider-theme="h" data-inset="false">
-          <li data-role="list-divider" role="heading">
-              <img src="img/FoolOneIcon.png" class="navicon" /><span class="navheader">Motley Fool One</span>
-          </li>             
-          <li data-theme="a" class="alerts">
-              <a href="#page5" data-transition="slide">
-                   <img src="img/appbar.speakerphone.png" class="navicon" /><span class="navtext">Trade Alerts</span>
-              </a>
-          </li>
-          <li data-theme="a" class="news">
-              <a href="#page1" data-transition="slide">
-                  <img src="img/appbar.newspaper.png" class="navicon" /><span class="navtext">Latest News</span>
-              </a>
-          </li>
-          <li data-theme="a" class="stocks">
-              <a href="#myStocksPage" data-transition="slide">
-                  <img src="img/appbar.stock.up.png" class="navicon" /><span class="navtext">My Stocks</span>
-              </a>
-          </li>            
-          <li data-role="list-divider" role="heading">
-          </li>
-          <li data-theme="a">
-              <a href="#page4" data-transition="slide">
-                  <img src="img/appbar.settings.png" class="navicon" /><span class="navtext">Settings</span>
-              </a>
-          </li>
-          <li data-theme="a">
-              <a href="#page8" data-transition="slide">
-                  <img src="img/appbar.question.png" class="navicon" /><span class="navtext">Help</span>
-              </a>
-          </li>
+      <div style=" text-align:center" data-controltype="image">
+          <img style="width: 100%; min-width: 290px;" src="img/capsRatingStats.png">
+      </div>  
+    </div>
+    <div data-role="tabbar" data-theme="a">
+        <ul>
+            <li>
+                <a href="#snapshotPage">
+                    Company
+                </a>
+            </li>
+            <li>
+                <a href="#stockNewsPage">
+                    News
+                </a>
+            </li>
+            <li>
+                <a href="#stockDataPage">
+                    Metrics
+                </a>
+            </li>
         </ul>
+    </div>
+  </div>
+  <div data-role="page" data-control-title="StockNews" id="stockNewsPage">
+    <div class="panelMenu" data-role="panel" id="panel6" data-position="left" data-display="reveal" data-theme="a">
+      <ul data-role="listview" data-divider-theme="h" data-inset="false">
+        <li data-role="list-divider" role="heading">
+            <img src="img/FoolOneIcon.png" class="navicon" /><span class="navheader">Motley Fool One</span>
+        </li>             
+        <li data-theme="a" class="alerts">
+            <a href="#alertsPage" data-transition="slide">
+                 <img src="img/appbar.speakerphone.png" class="navicon" /><span class="navtext">Trade Alerts</span>
+            </a>
+        </li>
+        <li data-theme="a" class="news">
+            <a href="#newsPage" data-transition="slide">
+                <img src="img/appbar.newspaper.png" class="navicon" /><span class="navtext">Latest News</span>
+            </a>
+        </li>
+        <li data-theme="a" class="stocks">
+            <a href="#stocksPage" data-transition="slide">
+                <img src="img/appbar.stock.up.png" class="navicon" /><span class="navtext">My Stocks</span>
+            </a>
+        </li>            
+        <li data-role="list-divider" role="heading">
+        </li>
+        <li data-theme="a">
+            <a href="#settingsPage" data-transition="slide">
+                <img src="img/appbar.settings.png" class="navicon" /><span class="navtext">Settings</span>
+            </a>
+        </li>
+        <li data-theme="a">
+            <a href="#helpPage" data-transition="slide">
+                <img src="img/appbar.question.png" class="navicon" /><span class="navtext">Help</span>
+            </a>
+        </li>
+      </ul>
+    </div>
+    <div data-theme="a" data-role="header" data-position="fixed">
+      <a data-role="button" href="#panel6" class="elvispanel ui-btn-left">
+        <img src="icon.png" class="elvis" />
+      </a>
+      <h3 style="font-family: 'Roboto', sans-serif; font-weight: lighter">NASDAQ: SHOS</h3>
+    </div>
+    <div data-role="content">
+      <div style=" text-align:center" data-controltype="image">
+        <img style="width:100%;min-width: 290px;margin-top:-5px;" src="img/searsNews.png">
       </div>
-      <div class="header-alerts" data-theme="a" data-role="header" data-position="fixed">
+    </div>
+    <div data-role="tabbar" data-theme="a">
+        <ul>
+            <li>
+                <a href="#snapshotPage">
+                    Company
+                </a>
+            </li>
+            <li>
+                <a href="#stockNewsPage">
+                    News
+                </a>
+            </li>
+            <li>
+                <a href="#stockDataPage">
+                    Metrics
+                </a>
+            </li>
+        </ul>
+    </div>
+  </div>
+  <div data-role="page" data-control-title="StockData" id="stockDataPage">
+    <div class="panelMenu" data-role="panel" id="panel6" data-position="left" data-display="reveal" data-theme="a">
+      <ul data-role="listview" data-divider-theme="h" data-inset="false">
+        <li data-role="list-divider" role="heading">
+            <img src="img/FoolOneIcon.png" class="navicon" /><span class="navheader">Motley Fool One</span>
+        </li>             
+        <li data-theme="a" class="alerts">
+            <a href="#alertsPage" data-transition="slide">
+                 <img src="img/appbar.speakerphone.png" class="navicon" /><span class="navtext">Trade Alerts</span>
+            </a>
+        </li>
+        <li data-theme="a" class="news">
+            <a href="#newsPage" data-transition="slide">
+                <img src="img/appbar.newspaper.png" class="navicon" /><span class="navtext">Latest News</span>
+            </a>
+        </li>
+        <li data-theme="a" class="stocks">
+            <a href="#stocksPage" data-transition="slide">
+                <img src="img/appbar.stock.up.png" class="navicon" /><span class="navtext">My Stocks</span>
+            </a>
+        </li>            
+        <li data-role="list-divider" role="heading">
+        </li>
+        <li data-theme="a">
+            <a href="#settingsPage" data-transition="slide">
+                <img src="img/appbar.settings.png" class="navicon" /><span class="navtext">Settings</span>
+            </a>
+        </li>
+        <li data-theme="a">
+            <a href="#helpPage" data-transition="slide">
+                <img src="img/appbar.question.png" class="navicon" /><span class="navtext">Help</span>
+            </a>
+        </li>
+      </ul>
+    </div>
+    <div data-theme="a" data-role="header" data-position="fixed">
+      <a data-role="button" href="#panel6" class="elvispanel ui-btn-left">
+        <img src="icon.png" class="elvis" />
+      </a>
+      <h3 style="font-family: 'Roboto', sans-serif; font-weight: lighter">NASDAQ: SHOS</h3>
+    </div>
+    <div data-role="content">
+      <div style=" text-align:center" data-controltype="image">
+        <img style="width:100%;min-width: 290px;margin-top:-5px;" src="img/perfChart.png">
+      </div>
+      <div style=" text-align:center" data-controltype="image">
+        <img style="width:100%;min-width: 290px;margin-top:-5px;" src="img/searsData.png">
+      </div>
+    </div>
+    <div data-role="tabbar" data-theme="a">
+        <ul>
+            <li>
+                <a href="#snapshotPage">
+                    Company
+                </a>
+            </li>
+            <li>
+                <a href="#stockNewsPage">
+                    News
+                </a>
+            </li>
+            <li>
+                <a href="#stockDataPage">
+                    Metrics
+                </a>
+            </li>
+        </ul>
+    </div>
+  </div>
+  <div data-role="page" data-control-title="Alerts" id="alertsPage">
+    <div class="panelMenu" data-role="panel" id="panel3" data-position="left" data-display="reveal" data-theme="a">
+      <ul data-role="listview" data-divider-theme="h" data-inset="false">
+        <li data-role="list-divider" role="heading">
+            <img src="img/FoolOneIcon.png" class="navicon" /><span class="navheader">Motley Fool One</span>
+        </li>             
+        <li data-theme="a" class="alerts">
+            <a href="#alertsPage" data-transition="slide">
+                 <img src="img/appbar.speakerphone.png" class="navicon" /><span class="navtext">Trade Alerts</span>
+            </a>
+        </li>
+        <li data-theme="a" class="news">
+            <a href="#newsPage" data-transition="slide">
+                <img src="img/appbar.newspaper.png" class="navicon" /><span class="navtext">Latest News</span>
+            </a>
+        </li>
+        <li data-theme="a" class="stocks">
+            <a href="#stocksPage" data-transition="slide">
+                <img src="img/appbar.stock.up.png" class="navicon" /><span class="navtext">My Stocks</span>
+            </a>
+        </li>            
+        <li data-role="list-divider" role="heading">
+        </li>
+        <li data-theme="a">
+            <a href="#settingsPage" data-transition="slide">
+                <img src="img/appbar.settings.png" class="navicon" /><span class="navtext">Settings</span>
+            </a>
+        </li>
+        <li data-theme="a">
+            <a href="#helpPage" data-transition="slide">
+                <img src="img/appbar.question.png" class="navicon" /><span class="navtext">Help</span>
+            </a>
+        </li>
+      </ul>
+    </div>
+    <div class="header-alerts" data-theme="a" data-role="header" data-position="fixed">
       <a data-role="button" href="#panel3" class="elvispanel ui-btn-left">
         <img src="icon.png" class="elvis" />
       </a>
       <h3 style="font-family: 'Roboto', sans-serif; font-weight: lighter">Trade Alerts</h3>
     </div>
-      <div data-role="content">
-          <div data-controltype="textblock">
-              <p style="" data-mce-style="">
-                  <span>
-                      <b>
-                          <span style="font-size: x-large;" data-mce-style="font-size: x-large;">
-                              Sample Alert Here
-                          </span>
-                          <br>
-                      </b>
-                  </span>
-                  <em>
-                      <b>
-                          from Rule Breakers
-                          <br>
-                      </b>
-                  </em>
-                  Photo booth flexitarian hashtag chillwave, ethical gluten-free vinyl scenester
-                  stumptown Vice Tumblr...
-              </p>
-          </div>
-          <hr style="height:3px; background-color:#ccc; border:0; margin-top:12px; margin-bottom:12px;">
-          <div data-controltype="textblock">
-              <p style="" data-mce-style="">
-                  <span>
-                      <b>
-                          <span style="font-size: x-large;" data-mce-style="font-size: x-large;">
-                              Sell Some Stock
-                          </span>
-                          <br>
-                      </b>
-                  </span>
-                  <em>
-                      <b>
-                          from Rule Breakers
-                          <br>
-                      </b>
-                  </em>
-                  Photo booth flexitarian hashtag chillwave, ethical gluten-free vinyl scenester
-                  stumptown Vice Tumblr...
-              </p>
-          </div>
-          <hr style="height:3px; background-color:#ccc; border:0; margin-top:12px; margin-bottom:12px;">
-          <div data-controltype="textblock">
-              <p style="" data-mce-style="">
-                  <span>
-                      <b>
-                          <span style="font-size: x-large;" data-mce-style="font-size: x-large;">
-                              Supernova Buy Alert
-                          </span>
-                          <br>
-                      </b>
-                  </span>
-                  <em>
-                      <b>
-                          from Supernova
-                          <br>
-                      </b>
-                  </em>
-                  Photo booth flexitarian hashtag chillwave, ethical gluten-free vinyl scenester
-                  stumptown Vice Tumblr...
-              </p>
-          </div>
+    <div data-role="content">
+      <div style=" text-align:center" data-controltype="image">
+        <img style="width:100%;min-width: 290px;margin-top:-5px;" src="img/alertfeed.PNG">
       </div>
+    </div>
   </div>
-  <div data-role="page" data-control-title="Settings" id="page4">
-      <div class="panelMenu" data-role="panel" id="panel4" data-position="left" data-display="reveal" data-theme="a">
+  <div data-role="page" data-control-title="Settings" id="settingsPage">
+    <div class="panelMenu" data-role="panel" id="panel4" data-position="left" data-display="reveal" data-theme="a">
       <ul data-role="listview" data-divider-theme="h" data-inset="false">
-              <li data-role="list-divider" role="heading">
-                  <img src="img/FoolOneIcon.png" class="navicon" /><span class="navheader">Motley Fool One</span>
-              </li>             
-              <li data-theme="a" class="alerts">
-                  <a href="#page5" data-transition="slide">
-                       <img src="img/appbar.speakerphone.png" class="navicon" /><span class="navtext">Trade Alerts</span>
-                  </a>
-              </li>
-              <li data-theme="a" class="news">
-                  <a href="#page1" data-transition="slide">
-                      <img src="img/appbar.newspaper.png" class="navicon" /><span class="navtext">Latest News</span>
-                  </a>
-              </li>
-              <li data-theme="a" class="stocks">
-                  <a href="#myStocksPage" data-transition="slide">
-                      <img src="img/appbar.stock.up.png" class="navicon" /><span class="navtext">My Stocks</span>
-                  </a>
-              </li>            
-              <li data-role="list-divider" role="heading">
-              </li>
-              <li data-theme="a">
-                  <a href="#page4" data-transition="slide">
-                      <img src="img/appbar.settings.png" class="navicon" /><span class="navtext">Settings</span>
-                  </a>
-              </li>
-              <li data-theme="a">
-                  <a href="#page8" data-transition="slide">
-                      <img src="img/appbar.question.png" class="navicon" /><span class="navtext">Help</span>
-                  </a>
-              </li>
+        <li data-role="list-divider" role="heading">
+            <img src="img/FoolOneIcon.png" class="navicon" /><span class="navheader">Motley Fool One</span>
+        </li>             
+        <li data-theme="a" class="alerts">
+            <a href="#alertsPage" data-transition="slide">
+                 <img src="img/appbar.speakerphone.png" class="navicon" /><span class="navtext">Trade Alerts</span>
+            </a>
+        </li>
+        <li data-theme="a" class="news">
+            <a href="#newsPage" data-transition="slide">
+                <img src="img/appbar.newspaper.png" class="navicon" /><span class="navtext">Latest News</span>
+            </a>
+        </li>
+        <li data-theme="a" class="stocks">
+            <a href="#stocksPage" data-transition="slide">
+                <img src="img/appbar.stock.up.png" class="navicon" /><span class="navtext">My Stocks</span>
+            </a>
+        </li>            
+        <li data-role="list-divider" role="heading">
+        </li>
+        <li data-theme="a">
+            <a href="#settingsPage" data-transition="slide">
+                <img src="img/appbar.settings.png" class="navicon" /><span class="navtext">Settings</span>
+            </a>
+        </li>
+        <li data-theme="a">
+            <a href="#helpPage" data-transition="slide">
+                <img src="img/appbar.question.png" class="navicon" /><span class="navtext">Help</span>
+            </a>
+        </li>
       </ul>
     </div>
     <div class="header-news" data-theme="a" data-role="header" data-position="fixed">
@@ -668,213 +517,216 @@
       </a>
       <h3 style="font-family: 'Roboto', sans-serif; font-weight: lighter">Settings</h3>
     </div>
-      <div data-role="content">
-          <div data-role="fieldcontain" data-controltype="selectmenu">
-              <label for="selectmenu1">
-                  Home Screen
-              </label>
-              <select id="selectmenu1" name="">                  
-                  <option value="option1">
-                      My Stocks
-                  </option>
-                  <option value="value">
-                      Latest News
-                  </option>
-                  <option value="value">
-                      Trade Alerts
-                  </option>
-              </select>
+    <div data-role="content">
+      <div data-role="fieldcontain" data-controltype="selectmenu">
+          <label for="selectmenu1">
+              Home Screen
+          </label>
+          <select id="selectmenu1" name="">                  
+              <option value="option1">
+                  My Stocks
+              </option>
+              <option value="value">
+                  Latest News
+              </option>
+              <option value="value">
+                  Trade Alerts
+              </option>
+          </select>
+      </div>
+      <div data-role="fieldcontain" data-controltype="toggleswitch">
+          <label for="toggleswitch1">
+              Allow Push Notifications
+          </label>
+          <select name="toggleswitch1" id="toggleswitch1" data-theme="" data-role="slider">
+              <option value="off">
+                  Off
+              </option>
+              <option value="on">
+                  On
+              </option>
+          </select>
+      </div>         
+      <div class="ui-grid-a">
+          <div class="ui-block-a">                 
+            <label for="VideoSwitch">
+                Video Content
+            </label>
+            <select name="VideoSwitch" id="VideoSwitch" data-theme="" data-role="slider">
+                <option value="off">
+                    Show
+                </option>
+                <option value="on">
+                    Hide
+                </option>
+            </select>
           </div>
-          <div data-role="fieldcontain" data-controltype="toggleswitch">
-              <label for="toggleswitch1">
-                  Allow Push Notifications
-              </label>
-              <select name="toggleswitch1" id="toggleswitch1" data-theme="" data-role="slider">
-                  <option value="off">
-                      Off
-                  </option>
-                  <option value="on">
-                      On
-                  </option>
-              </select>
-          </div>         
-          <div class="ui-grid-a">
-              <div class="ui-block-a">                 
-                <label for="VideoSwitch">
-                    Video Content
-                </label>
-                <select name="VideoSwitch" id="VideoSwitch" data-theme="" data-role="slider">
-                    <option value="off">
-                        Show
-                    </option>
-                    <option value="on">
-                        Hide
-                    </option>
-                </select>
-              </div>
-              <div class="ui-block-b">              
-                <label for="AudioSwitch">
-                    Audio Content
-                </label>
-                <select name="AudioSwitch" id="AudioSwitch" data-theme="" data-role="slider">
-                    <option value="off">
-                        Show
-                    </option>
-                    <option value="on">
-                        Hide
-                    </option>
-                </select>
-              </div>
-          </div>
-          <div id="checkboxes2" data-role="fieldcontain" data-controltype="checkboxes">
-              <fieldset data-role="controlgroup" data-type="vertical">
-                  <legend>
-                      Show News &amp; Alerts From...
-                  </legend>
-                  <input id="checkbox7" name="" type="checkbox">
-                  <label for="checkbox7">
-                      Hidden Gems
-                  </label>
-                  <input id="checkbox11" name="" type="checkbox">
-                  <label for="checkbox11">
-                      Income Investor
-                  </label>
-                  <input id="checkbox12" name="" type="checkbox">
-                  <label for="checkbox12">
-                      Inside Value
-                  </label>
-                  <input id="checkbox13" name="" type="checkbox">
-                  <label for="checkbox13">
-                      MDP Deep Value
-                  </label>
-                  <input id="checkbox15" name="" type="checkbox">
-                  <label for="checkbox15">
-                      Million Dollar Portfolio
-                  </label>
-                  <input id="checkbox14" name="" type="checkbox">
-                  <label for="checkbox14">
-                      Options
-                  </label>
-                  <input id="checkbox17" name="Pro" type="checkbox">
-                  <label for="checkbox17">
-                      Pro
-                  </label>
-                  <input id="checkbox9" name="" type="checkbox">
-                  <label for="checkbox9">
-                      Rule Breakers
-                  </label>
-                  <input id="checkbox8" name="" type="checkbox">
-                  <label for="checkbox8">
-                      Rule Your Retirement
-                  </label>
-                  <input id="checkbox16" name="" type="checkbox">
-                  <label for="checkbox16">
-                      Special Ops
-                  </label>
-                  <input id="checkbox6" name="" type="checkbox">
-                  <label for="checkbox6">
-                      Stock Advisor
-                  </label>
-                  <input id="checkbox10" name="" type="checkbox">
-                  <label for="checkbox10">
-                      Supernova
-                  </label>
-              </fieldset>
+          <div class="ui-block-b">              
+            <label for="AudioSwitch">
+                Audio Content
+            </label>
+            <select name="AudioSwitch" id="AudioSwitch" data-theme="" data-role="slider">
+                <option value="off">
+                    Show
+                </option>
+                <option value="on">
+                    Hide
+                </option>
+            </select>
           </div>
       </div>
+      <div id="checkboxes2" data-role="fieldcontain" data-controltype="checkboxes">
+          <fieldset data-role="controlgroup" data-type="vertical">
+              <legend>
+                  Show News &amp; Alerts From...
+              </legend>
+              <input id="checkbox7" name="" type="checkbox">
+              <label for="checkbox7">
+                  Hidden Gems
+              </label>
+              <input id="checkbox11" name="" type="checkbox">
+              <label for="checkbox11">
+                  Income Investor
+              </label>
+              <input id="checkbox12" name="" type="checkbox">
+              <label for="checkbox12">
+                  Inside Value
+              </label>
+              <input id="checkbox13" name="" type="checkbox">
+              <label for="checkbox13">
+                  MDP Deep Value
+              </label>
+              <input id="checkbox15" name="" type="checkbox">
+              <label for="checkbox15">
+                  Million Dollar Portfolio
+              </label>
+              <input id="checkbox14" name="" type="checkbox">
+              <label for="checkbox14">
+                  Options
+              </label>
+              <input id="checkbox17" name="Pro" type="checkbox">
+              <label for="checkbox17">
+                  Pro
+              </label>
+              <input id="checkbox9" name="" type="checkbox">
+              <label for="checkbox9">
+                  Rule Breakers
+              </label>
+              <input id="checkbox8" name="" type="checkbox">
+              <label for="checkbox8">
+                  Rule Your Retirement
+              </label>
+              <input id="checkbox16" name="" type="checkbox">
+              <label for="checkbox16">
+                  Special Ops
+              </label>
+              <input id="checkbox6" name="" type="checkbox">
+              <label for="checkbox6">
+                  Stock Advisor
+              </label>
+              <input id="checkbox10" name="" type="checkbox">
+              <label for="checkbox10">
+                  Supernova
+              </label>
+          </fieldset>
+      </div>
+    </div>
   </div>
-  <div data-role="page" data-control-title="Help" id="page8">
-      <div class="panelMenu" data-role="panel" id="panel9" data-position="left" data-display="reveal" data-theme="a">
+  <div data-role="page" data-control-title="Help" id="helpPage">
+    <div class="panelMenu" data-role="panel" id="panel9" data-position="left" data-display="reveal" data-theme="a">
       <ul data-role="listview" data-divider-theme="h" data-inset="false">
               <li data-role="list-divider" role="heading">
                   <img src="img/FoolOneIcon.png" class="navicon" /><span class="navheader">Motley Fool One</span>
               </li>             
               <li data-theme="a" class="alerts">
-                  <a href="#page5" data-transition="slide">
+                  <a href="#alertsPage" data-transition="slide">
                        <img src="img/appbar.speakerphone.png" class="navicon" /><span class="navtext">Trade Alerts</span>
                   </a>
               </li>
               <li data-theme="a" class="news">
-                  <a href="#page1" data-transition="slide">
+                  <a href="#newsPage" data-transition="slide">
                       <img src="img/appbar.newspaper.png" class="navicon" /><span class="navtext">Latest News</span>
                   </a>
               </li>
               <li data-theme="a" class="stocks">
-                  <a href="#myStocksPage" data-transition="slide">
+                  <a href="#stocksPage" data-transition="slide">
                       <img src="img/appbar.stock.up.png" class="navicon" /><span class="navtext">My Stocks</span>
                   </a>
               </li>            
               <li data-role="list-divider" role="heading">
               </li>
               <li data-theme="a">
-                  <a href="#page4" data-transition="slide">
+                  <a href="#settingsPage" data-transition="slide">
                       <img src="img/appbar.settings.png" class="navicon" /><span class="navtext">Settings</span>
                   </a>
               </li>
               <li data-theme="a">
-                  <a href="#page8" data-transition="slide">
+                  <a href="#helpPage" data-transition="slide">
                       <img src="img/appbar.question.png" class="navicon" /><span class="navtext">Help</span>
                   </a>
               </li>
       </ul>
-  </div>
-  <div class="header-news" data-theme="a" data-role="header" data-position="fixed">
+    </div>
+    <div class="header-news" data-theme="a" data-role="header" data-position="fixed">
       <a data-role="button" href="#panel9" class="elvispanel ui-btn-left">
         <img src="icon.png" class="elvis" />
       </a>
       <h3 style="font-family: 'Roboto', sans-serif; font-weight: lighter">Help</h3>
-  </div>
-  <div data-role="content">
-          <div data-controltype="textblock">
-              <h1 data-mce-style="text-align: center;" style="text-align: center;">
-                  <b>
-                      Need Help?
-                  </b>
-              </h1>
-          </div>
-          <div data-controltype="textblock">
-              <h3 style="text-align: center;" data-mce-style="text-align: center;">
-                  <span style="font-size: 1.17em;" data-mce-style="font-size: 1.17em;">
-                      Just Call (703) 123-4151
-                  </span>
-              </h3>
-              <p style="text-align: center;" data-mce-style="text-align: center;">
-                  <span style="font-size: 12px;" data-mce-style="font-size: 12px;">
-                      (Click
-                      <a data-mce-href="#" href="#" style="" data-mce-style="">
-                          here
-                      </a>
-                      &nbsp;and we will call you!)
-                  </span>
-              </p>
-          </div>
-          <div data-controltype="textblock">
-              <p style="text-align: center;" data-mce-style="text-align: center;">
-                  <b>
-                      <span>
-                          — &nbsp;
-                      </span>
-                      or &nbsp;
-                      <span>
-                          —
-                      </span>
-                  </b>
-              </p>
-          </div>
-          <div data-controltype="textblock">
-              <h3 data-mce-style="text-align: center;" style="text-align: center;">
-                  <b>
-                      Ask us a Question Below
-                  </b>
-              </h3>
-          </div>
-          <div data-role="fieldcontain" data-controltype="textarea">
-              <textarea name="" id="textarea1" placeholder="">Type your question here!</textarea>
-          </div>
-          <a data-role="button" href="#page6">
-              Submit
-          </a>
-  </div>
+    </div>
+    <div data-role="content">
+            <div data-controltype="textblock">
+                <h1 data-mce-style="text-align: center;" style="text-align: center;">
+                    <b>
+                        Need Help?
+                    </b>
+                </h1>
+            </div>
+            <div data-controltype="textblock">
+                <h3 style="text-align: center;" data-mce-style="text-align: center;">
+                    <span style="font-size: 1.17em;" data-mce-style="font-size: 1.17em;">
+                        Just Call (703) 123-4151
+                    </span>
+                </h3>
+                <p style="text-align: center;" data-mce-style="text-align: center;">
+                    <span style="font-size: 12px;" data-mce-style="font-size: 12px;">
+                        (Click
+                        <a data-mce-href="#" href="#" style="" data-mce-style="">
+                            here
+                        </a>
+                        &nbsp;and we will call you!)
+                    </span>
+                </p>
+            </div>
+            <div data-controltype="textblock">
+                <p style="text-align: center;" data-mce-style="text-align: center;">
+                    <b>
+                        <span>
+                            — &nbsp;
+                        </span>
+                        or &nbsp;
+                        <span>
+                            —
+                        </span>
+                    </b>
+                </p>
+            </div>
+            <div data-controltype="textblock">
+                <h3 data-mce-style="text-align: center;" style="text-align: center;">
+                    <b>
+                        Ask us a Question Below
+                    </b>
+                </h3>
+            </div>
+            <div data-role="fieldcontain" data-controltype="textarea">
+                <textarea name="" id="textarea1" placeholder="">Type your question here!</textarea>
+            </div>
+            <a data-role="button" href="#page6">
+                Submit
+            </a>
+    </div>
   </div>
 </body>
 </html>
+
+  
+  

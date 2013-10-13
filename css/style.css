@@ -3,7 +3,6 @@
 	min-height: 65px;
 	background-color: #404040;	
 }
-
 .brand {
 	background: transparent url(../img/headerSprite.gif) no-repeat top left !important;
 	height: 60px;
@@ -18,92 +17,80 @@
 	box-shadow: none;	
 	border: none !important;
 }
-
 .elvis {
 	margin-top: -3px;
 	margin-bottom: -5px;
 	height: 35px;
 	width: 35px;
 }
-
 .elvispanel span.ui-btn-inner {
 	padding-top: 0px !important;
 	padding-right: 0px !important;
 	padding-left: 0px !important;
 	padding-bottom: 0px !important;
 }
-
 .menuicon {
 	width: 25px;
 	height: 25px;
 }
-
 #stockSearchArea {
 	margin-top: -10px;	
 }
-
 .stockUp {
 	display: inline-block;
 	margin-top: 3px;
 }
-
 .stockDown {
 	display: inline-block;
 	margin-top: 3px;
 }
-
 .stockRowPrice {
 	float: right;
 	padding-right: 20px;
+	font-size: 12px;
 }
-
 .stockRowChangeUp {
 	font-weight: lighter;
 	float: right;
 	color: #55AA22;
+	margin-top: -3px;
 	padding-right: 5px;
+	font-size: 12px;
 }
-
 .stockRowChangeDown {
 	font-weight: lighter;
 	float: right;
 	color: #BB0000;
-	padding-right: 5px;	
+	margin-top: -3px;
+	padding-right: 5px;
+	font-size: 14px;	
 }
-
 .panelMenu { 
 	background-color: #222222;
 }
-
 .panelMenu .ui-btn-up-a {
 	background-color: #404040;
 }
-
 .panelMenu .ui-li-divider {
 	background-color: #222222;
 	color: #fff;
 }
-
 .panelMenu .ui-btn-up-a:visited, .ui-btn-up-a a.ui-link-inherit {
 	color: #fff !important;
 	font-weight: lighter !important;
 }
-
 .panelMenu li.alerts .ui-icon-shadow {
 	background-color: #882288;
 }
 .panelMenu li.alerts .ui-btn-inner .ui-li {
 	background-color: #882288 !important;
 }
-
 .panelMenu li.news .ui-icon-shadow {
 	background-color: #FF9900;
 }
-
 .panelMenu li.stocks .ui-icon-shadow {
 	background-color: #0077AA;
 }
-
 .panelMenu img.navicon { 
 	display: inline-block;  
     position: absolute;
@@ -113,17 +100,14 @@
     width: 30px;
     margin-left: 15px;
 }
-
 .panelMenu .ui-listview .ui-li > .ui-btn-text {
 	max-height: 50px;
 }
-
 .panelMenu span.navtext {
 	padding-top: 2px;
 	margin-left: -40px;
 	font-size: 18px;
 }
-
 .panelMenu span.navheader {
 	font-size: 24px;
 	font-family: 'Roboto', 
@@ -131,15 +115,81 @@
 	font-weight: lighter;
 	margin-left: 50px;
 }
-
 .losers {
 	background-color: #BB0000;
 }
-
 /*.header-alerts {
 	background-color: #882288;
 }
-
 .header-news { 
 	background-color: #FF9900;
 }*/
+.faded {
+	zoom: 1;
+	filter: alpha(opacity=15);
+	opacity: 0.15;
+}
+.snapShotTitle {
+	width: 100%;
+	min-width: 290px;
+	text-align: center;
+	font-family: 'Noto Sans', sans-serif;
+	font-weight: bold;
+	font-size: 24px;
+	color: #0077AA;
+}
+.snapShotExchangeData {
+	font-family: 'Noto Sans', sans-serif;
+	font-weight: lighter;
+	font-size: 18px;
+	color: #323232;
+}
+.snapShotCurrentData {
+	font-family: 'Roboto', sans-serif;
+	font-weight: lighter;
+	font-size: 20px;
+	color: #323232;
+}
+.performance {
+
+}
+.performance-out .ui-btn-inner {	
+	padding: 5px;
+	font-family: 'Noto Sans', sans-serif;
+	background-color: #55AA22 !important;
+	color: white !important;
+	font-weight: lighter;
+	font-size: 12px;
+	text-shadow: none;
+}
+.performance-under .ui-btn-inner {
+	padding: 5px;
+	font-family: 'Noto Sans', sans-serif;
+	background-color: #BB0000 !important;
+	color: white !important;
+	font-weight: lighter;
+	font-size: 12px;
+	text-shadow: none;
+}
+.includeInMyStocksText {
+	position: absolute;
+	padding-top: 8px;
+	min-width: 200px;
+}
+.includeInMyStocks {
+	margin-top: -10px !important;
+	min-width: 200px;
+}
+.includeInMyStocks span.ui-btn-inner {
+	padding: 3px 15px !important;
+}
+.includeInMyStocks label.ui-radio-off {
+	color: White !important;
+	text-shadow: none;
+	background-color: #CDCDCD;
+}
+.includeInMyStocks label.ui-radio-on {
+	color: White !important;
+	text-shadow: none;
+	background-color: #0077AA;
+}
