@@ -206,6 +206,9 @@
 	text-shadow: none;
 	background-color: #0077AA;
 }
+#stockDataPage .ui-content {
+	padding: 0px;
+}
 #snapshotPage .ui-content {
 	padding: 0px;
 }

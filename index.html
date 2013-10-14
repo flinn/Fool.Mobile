@@ -86,8 +86,9 @@
       </a>
       <h3 style="font-family: 'Roboto', sans-serif; font-weight: lighter">Latest News</h3>
     </div>
-    <div data-role="content">
-      <div style="text-align:center; width: 100%; height: 420px;" class="premiumNewsBg swipeToClear" data-controltype="image">        
+    <div data-role="content">      
+      <div class="swipeToClear" style=" text-align:center" data-controltype="image">
+        <img style="width:100%;min-width: 290px;" src="img/premiumNews.PNG">
       </div>
       <div style=" text-align:center" data-controltype="image">
         <img style="width:100%;min-width: 290px;margin-top:-5px;" src="img/newsFeed.PNG">
@@ -410,10 +411,10 @@
     </div>
     <div data-role="content">
       <div style=" text-align:center" data-controltype="image">
-        <img style="width:100%;min-width: 290px;margin-top:-5px;" src="img/perfChart.PNG">
+        <img style="width:100%;min-width: 290px;" src="img/perfChart.PNG">
       </div>
       <div style=" text-align:center" data-controltype="image">
-        <img style="width:100%;min-width: 290px;margin-top:-5px;" src="img/searsData.PNG">
+        <img style="width:100%;min-width: 290px;" src="img/searsData.PNG">
       </div>
     </div>
     <div data-role="tabbar" data-theme="a">
@@ -475,10 +476,11 @@
       <a data-role="button" href="#panel3" class="elvispanel ui-btn-left">
         <img src="icon.png" class="elvis" />
       </a>
-      <h3 style="font-family: 'Roboto', sans-serif; font-weight: lighter">Trade Alerts</h3>
+      <h3 class="alertsTitle" style="font-family: 'Roboto', sans-serif; font-weight: lighter">Trade Alerts</h3>
     </div>
     <div data-role="content">
-      <div style="text-align:center; width: 100%; height: 420px;" class="premiumTradeBg swipeToClear" data-controltype="image">        
+      <div class="swipeToClear" style=" text-align:center" data-controltype="image">
+        <img style="width:100%;min-width: 290px;margin-top:-5px;" src="img/tradealert.PNG">
       </div>
       <div style=" text-align:center" data-controltype="image">
         <img style="width:100%;min-width: 290px;margin-top:-5px;" src="img/alertfeed.PNG">
@@ -527,18 +529,18 @@
       <h3 style="font-family: 'Roboto', sans-serif; font-weight: lighter">Settings</h3>
     </div>
     <div data-role="content">
-      <div data-role="fieldcontain" data-controltype="selectmenu">
-          <label for="selectmenu1">
+      <div id="homeScreenSelector" data-role="fieldcontain" data-controltype="selectmenu">
+          <label for="selectHomeScreen">
               Home Screen
           </label>
-          <select id="selectmenu1" name="">                  
-              <option value="option1">
+          <select id="selectHomeScreen" name="">                  
+              <option value="homePageMyStocks" selected>
                   My Stocks
               </option>
-              <option value="value">
+              <option value="homePageLatestNews">
                   Latest News
               </option>
-              <option value="value">
+              <option value="homePageTradeAlerts">
                   Trade Alerts
               </option>
           </select>
