@@ -40,11 +40,11 @@
 }
 .stockUp {
 	display: inline-block;
-	margin-top: 3px;
+	margin-top: 5px;
 }
 .stockDown {
 	display: inline-block;
-	margin-top: 3px;
+	margin-top: 5px;
 }
 .stockRowPrice {
 	float: right;
@@ -65,7 +65,7 @@
 	color: #BB0000;
 	margin-top: -3px;
 	padding-right: 5px;
-	font-size: 14px;	
+	font-size: 12px;
 }
 .panelMenu { 
 	background-color: #222222;
@@ -133,18 +133,14 @@
 .header-news { 
 	background-color: #FF9900;
 }*/
-.faded {
-	zoom: 1;
-	filter: alpha(opacity=25);
-	opacity: 0.25;
-}
 .snapshotCurrentData {
 	display: block;
-	height: 40px;
+	height: 50px;
 }
 .snapShotCurrentPrice {
 	font-family: 'Noto Sans', sans-serif;
 	float: left;
+	padding-top: 10px;
 	padding-left: 15px;
 	font-weight: bold;
 	font-size: 24px;
@@ -158,9 +154,10 @@
 	text-shadow: none;
 	font-weight: lighter;
 	display: inline;
+	padding-top: 10px;
 	padding-left: 25px;
 	padding-right: 15px;
-	background: transparent url('../img/arrow_down_large.gif') no-repeat 0 10px;
+	background: transparent url('../img/arrow_up_large.gif') no-repeat 0 20px;
 }
 .performance {
 
@@ -249,4 +246,19 @@
 	background: url('../img/tradealert.PNG') no-repeat;
 	height: 420px;
 	width: 100%
+}
+.stocklisticon {	
+	float: right;
+}
+.stocklisticon img {
+	position: absolute;
+	margin-left: -25px;
+	margin-top: -12px;
+	width: 45px;
+	height: 45px;
+}
+#homeScreenSelector .ui-btn {
+	text-shadow: none !important;
+	color: #fff !important;
+	background: #0077AA;
 }

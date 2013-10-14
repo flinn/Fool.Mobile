@@ -135,12 +135,7 @@ var app = (function () {
 }());
 
 $(document).bind("mobileinit", function() {
-    $.extend($.mobile,{
-        defaultPageTransition: 'none' 
-    });
-    $.mobile.defaultPageTransition = 'none';
     $.mobile.defaultDialogTransition = 'none';
-
     $.extend($.mobile,{
         allowCrossDomainPages: true,
         //defaultPageTransition: "slide"
