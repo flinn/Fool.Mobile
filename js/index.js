@@ -135,17 +135,17 @@ var app = (function () {
 }());
 
 $(document).bind("mobileinit", function() {
-    $('#panelMenu').hide();
+    $.extend($.mobile,{
+        defaultPageTransition: 'none' 
+    });
     $.mobile.defaultPageTransition = 'none';
     $.mobile.defaultDialogTransition = 'none';
-    $.extend($.mobile, {
+
+    $.extend($.mobile,{
         allowCrossDomainPages: true,
         //defaultPageTransition: "slide"
     });
-    $.extend($.support, {
+    $.extend($.support,{
         cors: true
-    });
-    $.extend(  $.mobile , {
-        defaultPageTransition: 'none'
     });
 });

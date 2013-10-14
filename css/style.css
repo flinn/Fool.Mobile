@@ -1,4 +1,6 @@
-
+.ui-page {
+    -webkit-backface-visibility: hidden;
+}
 .headerArea {
 	min-height: 65px;
 	background-color: #404040;	
@@ -80,16 +82,22 @@
 	font-weight: lighter !important;
 }
 .panelMenu li.alerts .ui-icon-shadow {
-	background-color: #882288;
+	background-color: #BB0000;
 }
 .panelMenu li.alerts .ui-btn-inner .ui-li {
-	background-color: #882288 !important;
+	background-color: #BB0000 !important;
 }
 .panelMenu li.news .ui-icon-shadow {
-	background-color: #FF9900;
+	background-color: #55AA22;
 }
 .panelMenu li.stocks .ui-icon-shadow {
 	background-color: #0077AA;
+}
+.panelMenu li.settings .ui-icon-shadow {
+	background-color: #FFB402;
+}
+.panelMenu li.help .ui-icon-shadow {
+	background-color: #FFB402;
 }
 .panelMenu img.navicon { 
 	display: inline-block;  
@@ -117,6 +125,7 @@
 }
 .losers {
 	background-color: #BB0000;
+	border: 1px solid #BB0000;
 }
 /*.header-alerts {
 	background-color: #882288;
@@ -126,29 +135,32 @@
 }*/
 .faded {
 	zoom: 1;
-	filter: alpha(opacity=15);
-	opacity: 0.15;
+	filter: alpha(opacity=25);
+	opacity: 0.25;
 }
-.snapShotTitle {
-	width: 100%;
-	min-width: 290px;
-	text-align: center;
+.snapshotCurrentData {
+	display: block;
+	height: 40px;
+}
+.snapShotCurrentPrice {
 	font-family: 'Noto Sans', sans-serif;
+	float: left;
+	padding-left: 15px;
 	font-weight: bold;
 	font-size: 24px;
-	color: #0077AA;
+	color: #222222;
+	text-shadow: none;
 }
-.snapShotExchangeData {
+.snapShotCurrentChange {
 	font-family: 'Noto Sans', sans-serif;
+	font-size: 24px;
+	float: right;
+	text-shadow: none;
 	font-weight: lighter;
-	font-size: 18px;
-	color: #323232;
-}
-.snapShotCurrentData {
-	font-family: 'Roboto', sans-serif;
-	font-weight: lighter;
-	font-size: 20px;
-	color: #323232;
+	display: inline;
+	padding-left: 25px;
+	padding-right: 15px;
+	background: transparent url('../img/arrow_down_large.gif') no-repeat 0 10px;
 }
 .performance {
 
@@ -175,6 +187,7 @@
 	position: absolute;
 	padding-top: 8px;
 	min-width: 200px;
+	padding-left: 15px;
 }
 .includeInMyStocks {
 	margin-top: -10px !important;
@@ -192,4 +205,45 @@
 	color: White !important;
 	text-shadow: none;
 	background-color: #0077AA;
+}
+#snapshotPage .ui-content {
+	padding: 0px;
+}
+#newsPage .ui-content {
+	padding: 0px;
+}
+#alertsPage .ui-content {
+	padding: 0px;
+}
+.stockHeader {
+	margin-top: -5px;
+	background-color: #0076AA;
+	height: 4px;
+	width: 100%;
+	display: block;
+	position: relative;
+}
+
+.stocksTitle {
+	display: inline;
+	background: transparent url('../img/appbar.stock.up.gif') no-repeat 0 10px;
+	padding-left: 25px;
+}
+
+.newsTitle {
+	background: transparent url('../img/appbar.newspaper.gif') no-repeat 0 10px;
+}
+
+.alertsTitle {
+	background: transparent url('../img/appbar.speakerphone.gif') no-repeat 0 10px;
+}
+
+.premiumNewsBg {
+	background: url('../img/premiumNews.PNG') no-repeat;
+}
+
+.premiumTradeBg {
+	background: url('../img/tradealert.PNG') no-repeat;
+	height: 420px;
+	width: 100%
 }

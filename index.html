@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>Fool Mobile</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
   <meta name="apple-mobile-web-app-capable" content="yes">
 
   <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
@@ -46,7 +46,7 @@
     </div>
   </div>
   <div data-role="page" data-control-title="News" id="newsPage">
-    <div class="panelMenu" data-role="panel" id="panel5" data-position="left" data-display="reveal" data-theme="a">
+    <div class="panelMenu" data-role="panel" id="panel5" data-position-fixed="true" data-position="left" data-display="reveal" data-theme="a">
       <ul data-role="listview" data-divider-theme="h" data-inset="false">
         <li data-role="list-divider" role="heading">
             <img src="img/FoolOneIcon.png" class="navicon" /><span class="navheader">Motley Fool One</span>
@@ -68,12 +68,12 @@
         </li>            
         <li data-role="list-divider" role="heading">
         </li>
-        <li data-theme="a">
+        <li data-theme="a" class="settings">
             <a href="#settingsPage">
                 <img src="img/appbar.settings.png" class="navicon" /><span class="navtext">Settings</span>
             </a>
         </li>
-        <li data-theme="a">
+        <li data-theme="a" class="help">
             <a href="#helpPage">
                 <img src="img/appbar.question.png" class="navicon" /><span class="navtext">Help</span>
             </a>
@@ -86,14 +86,16 @@
       </a>
       <h3 style="font-family: 'Roboto', sans-serif; font-weight: lighter">Latest News</h3>
     </div>
-    <div data-role="content">      
+    <div data-role="content">
+      <div style="text-align:center; width: 100%; height: 420px;" class="premiumNewsBg swipeToClear" data-controltype="image">        
+      </div>
       <div style=" text-align:center" data-controltype="image">
         <img style="width:100%;min-width: 290px;margin-top:-5px;" src="img/newsFeed.PNG">
       </div>
     </div>
   </div>
   <div data-role="page" data-control-title="Stocks" id="stocksPage">
-    <div class="panelMenu" data-role="panel" id="panel2" data-position="left" data-display="reveal" data-theme="a">
+    <div class="panelMenu" data-role="panel" id="panel2" data-position-fixed="true" data-position="left" data-display="reveal" data-theme="a">
       <ul data-role="listview" data-divider-theme="h" data-inset="false">
               <li data-role="list-divider" role="heading">
                   <img src="img/FoolOneIcon.png" class="navicon" /><span class="navheader">Motley Fool One</span>
@@ -115,12 +117,12 @@
               </li>            
               <li data-role="list-divider" role="heading">
               </li>
-              <li data-theme="a">
+              <li data-theme="a" class="settings">
                   <a href="#settingsPage" data-transition="slide">
                       <img src="img/appbar.settings.png" class="navicon" /><span class="navtext">Settings</span>
                   </a>
               </li>
-              <li data-theme="a">
+              <li data-theme="a" class="help">
                   <a href="#helpPage" data-transition="slide">
                       <img src="img/appbar.question.png" class="navicon" /><span class="navtext">Help</span>
                   </a>
@@ -131,7 +133,7 @@
       <a data-role="button" href="#panel2" class="elvispanel ui-btn-left">
         <img src="icon.png" class="elvis" />
       </a>
-      <h3 style="font-family: 'Roboto', sans-serif; font-weight: lighter">My Stocks</h3>
+      <h3 style="font-family: 'Roboto', sans-serif; font-weight: lighter" class="stocksTitle">My Stocks</h3>
     </div>
     <div data-role="content">
         <div style="margin-top: -15px;" class="ui-grid-a">
@@ -151,16 +153,16 @@
               </li>
               <li data-theme="c">
                   <a href="#snapshotPage" data-transition="slide">
-                      TSLA<span class="stockRowChangeUp"><img src="img/UpArrow.png" class="stockUp" />&nbsp;$5.77 (3.34%)</span><span class="stockRowPrice">$178.70</span>
+                      TSLA<span class="stockRowChangeUp"><img src="img/uparrow.png" class="stockUp" />&nbsp;$5.77 (3.34%)</span><span class="stockRowPrice">$178.70</span>
                   </a>
               </li>
               <li data-theme="c">
                   <a href="#snapshotPage" data-transition="slide">
-                      DVN<span class="stockRowChangeUp"><img src="img/UpArrow.png" class="stockUp" />&nbsp;$0.52 (0.86%)</span><span class="stockRowPrice">$60.80</span>
+                      DVN<span class="stockRowChangeUp"><img src="img/uparrow.png" class="stockUp" />&nbsp;$0.52 (0.86%)</span><span class="stockRowPrice">$60.80</span>
                   </a>
               </li>              <li data-theme="c">
                   <a href="#snapshotPage" data-transition="slide">
-                      YHOO<span class="stockRowChangeUp"><img src="img/UpArrow.png" class="stockUp" />&nbsp;$0.28 (0.83%)</span><span class="stockRowPrice">$34.15</span>
+                      YHOO<span class="stockRowChangeUp"><img src="img/uparrow.png" class="stockUp" />&nbsp;$0.28 (0.83%)</span><span class="stockRowPrice">$34.15</span>
                   </a>
               </li>              
           </ul>
@@ -187,7 +189,7 @@
       </div>
   </div>
   <div data-role="page" data-control-title="Snapshot" id="snapshotPage">
-    <div class="panelMenu" data-role="panel" id="panel6" data-position="left" data-display="reveal" data-theme="a">
+    <div class="panelMenu" data-role="panel" id="panel6" data-position-fixed="true" data-position="left" data-display="reveal" data-theme="a">
       <ul data-role="listview" data-divider-theme="h" data-inset="false">
         <li data-role="list-divider" role="heading">
             <img src="img/FoolOneIcon.png" class="navicon" /><span class="navheader">Motley Fool One</span>
@@ -209,12 +211,12 @@
         </li>            
         <li data-role="list-divider" role="heading">
         </li>
-        <li data-theme="a">
+        <li data-theme="a" class="settings">
             <a href="#settingsPage" data-transition="slide">
                 <img src="img/appbar.settings.png" class="navicon" /><span class="navtext">Settings</span>
             </a>
         </li>
-        <li data-theme="a">
+        <li data-theme="a" class="help">
             <a href="#helpPage" data-transition="slide">
                 <img src="img/appbar.question.png" class="navicon" /><span class="navtext">Help</span>
             </a>
@@ -227,25 +229,27 @@
       </a>
       <h3 style="font-family: 'Roboto', sans-serif; font-weight: lighter">NASDAQ: SHOS</h3>
     </div>
-    <div data-role="content">      
-      <div class="snapShotTitle">Sears Hometown & Outlet Stores<br/><br/>
-        <span class="snapShotCurrentData">$29.61<span style="color: #55AA22;">&nbsp;+$0.09&nbsp;(+3.3%)&nbsp;</span></span>
+    <div data-role="content">
+      <div style="text-align:center;" data-controltype="image">
+          <img class="faded" style="width: 100%; min-width: 290px;" src="img/searsheader.PNG">
       </div>
-      <div style="text-align:center; margin-top: -140px;" data-controltype="image">
-          <img class="faded" style="width: 100%; min-width: 290px;" src="img/sears.PNG">
-      </div>
+      <div class="stockHeader">&nbsp;</div>
+      <div class="snapshotCurrentData">
+        <span class="snapShotCurrentPrice">$29.61</span>
+        <span class="snapShotCurrentChange" style="color: #BB0000;">-$0.09&nbsp;(-0.30%)&nbsp;</span>
+      </div>      
       <div class="ui-grid-a">
           <div class="ui-block-a">
-            <span class="includeInMyStocksText">Include in <strong>My Stocks</strong>?</span>
+            <span class="includeInMyStocksText">Included in <strong>My Stocks</strong>?</span>
           </div>
           <div class="ui-block-b">
-            <div style="margin-left: 20px;" data-role="fieldcontain">        
+            <div style="margin-left: 30px;" data-role="fieldcontain">        
               <fieldset class="includeInMyStocks" data-role="controlgroup" data-type="horizontal">
-                  <input id="radio1" name="" value="radio1" type="radio">
+                  <input id="radio1" name="" value="radio1" type="radio" checked="checked">
                   <label for="radio1">
                       Yes
                   </label>
-                  <input id="radio2" name="" value="radio2" type="radio" checked="checked">
+                  <input id="radio2" name="" value="radio2" type="radio">
                   <label for="radio2">
                       No
                   </label>
@@ -256,13 +260,16 @@
       <div style=" text-align:center" data-controltype="image">
           <img style="width:100%;min-width: 290px;margin-top:-5px;" src="img/companyInfo.PNG">
       </div>
-      <div style="" data-controltype="textblock">            
+      <div style="padding: 15px; margin-top: -15px;" data-controltype="textblock">            
           <p>Sears Hometown and Outlet Stores, Inc. (SHO) is a retailer primarily focused on selling home appliances, hardware, tools and lawn and garden equipment</p>
       </div>
       <div style=" text-align:center" data-controltype="image">
           <img style="width: 100%; min-width: 290px;" src="img/capsRating.PNG">
-      </div>  
-      <div class="ui-grid-a">
+      </div>
+      <div style="padding: 15px; margin-top: -25px;" data-controltype="textblock">            
+          <p>How do you think <strong>SHOS</strong> will perform against the market?</p>
+      </div>
+      <div class="ui-grid-a" style="margin-top: -15px;">
           <div class="ui-block-a">
               <a class="performance-out" data-role="button" href="#">OUTPERFORM</a>
           </div>
@@ -295,7 +302,7 @@
     </div>
   </div>
   <div data-role="page" data-control-title="StockNews" id="stockNewsPage">
-    <div class="panelMenu" data-role="panel" id="panel6" data-position="left" data-display="reveal" data-theme="a">
+    <div class="panelMenu" data-role="panel" id="panel6" data-position-fixed="true" data-position="left" data-display="reveal" data-theme="a">
       <ul data-role="listview" data-divider-theme="h" data-inset="false">
         <li data-role="list-divider" role="heading">
             <img src="img/FoolOneIcon.png" class="navicon" /><span class="navheader">Motley Fool One</span>
@@ -317,12 +324,12 @@
         </li>            
         <li data-role="list-divider" role="heading">
         </li>
-        <li data-theme="a">
+        <li data-theme="a" class="settings">
             <a href="#settingsPage" data-transition="slide">
                 <img src="img/appbar.settings.png" class="navicon" /><span class="navtext">Settings</span>
             </a>
         </li>
-        <li data-theme="a">
+        <li data-theme="a" class="help">
             <a href="#helpPage" data-transition="slide">
                 <img src="img/appbar.question.png" class="navicon" /><span class="navtext">Help</span>
             </a>
@@ -361,7 +368,7 @@
     </div>
   </div>
   <div data-role="page" data-control-title="StockData" id="stockDataPage">
-    <div class="panelMenu" data-role="panel" id="panel6" data-position="left" data-display="reveal" data-theme="a">
+    <div class="panelMenu" data-role="panel" id="panel6" data-position-fixed="true" data-position="left" data-display="reveal" data-theme="a">
       <ul data-role="listview" data-divider-theme="h" data-inset="false">
         <li data-role="list-divider" role="heading">
             <img src="img/FoolOneIcon.png" class="navicon" /><span class="navheader">Motley Fool One</span>
@@ -430,7 +437,7 @@
     </div>
   </div>
   <div data-role="page" data-control-title="Alerts" id="alertsPage">
-    <div class="panelMenu" data-role="panel" id="panel3" data-position="left" data-display="reveal" data-theme="a">
+    <div class="panelMenu" data-role="panel" id="panel3" data-position-fixed="true" data-position="left" data-display="reveal" data-theme="a">
       <ul data-role="listview" data-divider-theme="h" data-inset="false">
         <li data-role="list-divider" role="heading">
             <img src="img/FoolOneIcon.png" class="navicon" /><span class="navheader">Motley Fool One</span>
@@ -452,12 +459,12 @@
         </li>            
         <li data-role="list-divider" role="heading">
         </li>
-        <li data-theme="a">
+        <li data-theme="a" class="settings">
             <a href="#settingsPage" data-transition="slide">
                 <img src="img/appbar.settings.png" class="navicon" /><span class="navtext">Settings</span>
             </a>
         </li>
-        <li data-theme="a">
+        <li data-theme="a" class="help">
             <a href="#helpPage" data-transition="slide">
                 <img src="img/appbar.question.png" class="navicon" /><span class="navtext">Help</span>
             </a>
@@ -471,13 +478,15 @@
       <h3 style="font-family: 'Roboto', sans-serif; font-weight: lighter">Trade Alerts</h3>
     </div>
     <div data-role="content">
+      <div style="text-align:center; width: 100%; height: 420px;" class="premiumTradeBg swipeToClear" data-controltype="image">        
+      </div>
       <div style=" text-align:center" data-controltype="image">
-        <img style="width:100%;min-width: 290px;margin-top:-5px;" src="img/alertfeed.png">
+        <img style="width:100%;min-width: 290px;margin-top:-5px;" src="img/alertfeed.PNG">
       </div>
     </div>
   </div>
   <div data-role="page" data-control-title="Settings" id="settingsPage">
-    <div class="panelMenu" data-role="panel" id="panel4" data-position="left" data-display="reveal" data-theme="a">
+    <div class="panelMenu" data-role="panel" id="panel4" data-position-fixed="true" data-position="left" data-display="reveal" data-theme="a">
       <ul data-role="listview" data-divider-theme="h" data-inset="false">
         <li data-role="list-divider" role="heading">
             <img src="img/FoolOneIcon.png" class="navicon" /><span class="navheader">Motley Fool One</span>
@@ -499,12 +508,12 @@
         </li>            
         <li data-role="list-divider" role="heading">
         </li>
-        <li data-theme="a">
+        <li data-theme="a" class="settings">
             <a href="#settingsPage" data-transition="slide">
                 <img src="img/appbar.settings.png" class="navicon" /><span class="navtext">Settings</span>
             </a>
         </li>
-        <li data-theme="a">
+        <li data-theme="a" class="help">
             <a href="#helpPage" data-transition="slide">
                 <img src="img/appbar.question.png" class="navicon" /><span class="navtext">Help</span>
             </a>
@@ -542,7 +551,7 @@
               <option value="off">
                   Off
               </option>
-              <option value="on">
+              <option value="on" selected>
                   On
               </option>
           </select>
@@ -633,7 +642,7 @@
     </div>
   </div>
   <div data-role="page" data-control-title="Help" id="helpPage">
-    <div class="panelMenu" data-role="panel" id="panel9" data-position="left" data-display="reveal" data-theme="a">
+    <div class="panelMenu" data-role="panel" id="panel9" data-position-fixed="true" data-position="left" data-display="reveal" data-theme="a">
       <ul data-role="listview" data-divider-theme="h" data-inset="false">
               <li data-role="list-divider" role="heading">
                   <img src="img/FoolOneIcon.png" class="navicon" /><span class="navheader">Motley Fool One</span>
@@ -655,12 +664,12 @@
               </li>            
               <li data-role="list-divider" role="heading">
               </li>
-              <li data-theme="a">
+              <li data-theme="a" class="settings">
                   <a href="#settingsPage" data-transition="slide">
                       <img src="img/appbar.settings.png" class="navicon" /><span class="navtext">Settings</span>
                   </a>
               </li>
-              <li data-theme="a">
+              <li data-theme="a" class="help">
                   <a href="#helpPage" data-transition="slide">
                       <img src="img/appbar.question.png" class="navicon" /><span class="navtext">Help</span>
                   </a>

@@ -323,8 +323,13 @@
 -----------------------------------------------------------------------------------------------------------*/
 
 .ui-slider-handle {
-  background:  #55AA22;
-  border: 1px solid #55AA22;
+  background-image:url('../img/FoolOneIcon.png');
+  background-size: 103%;
+  -moz-box-shadow: inset 0 0 2px #222222;
+  -webkit-box-shadow: inset 0 0 2px #222222;
+  box-shadow: inset 0 0 2px #222222;
+  /*background:  #55AA22;*/
+  border: 1px solid #909090;
 }
 
 .ui-slider-label.ui-btn-corner-all,
